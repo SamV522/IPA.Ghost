@@ -1,18 +1,12 @@
-<div class="ghost-page">
-  <h1 style="text-align: center;">I Picked A Ghost</h1>
-  <i class="hidden-subtitle">In Primo Aspectu</i>
-  <!--  In Primo Aspectu -->
-  <div class="ghost-container">
-    <div class="ghost-column" *ngFor="let column of columns">
-      <ul>
-        <li *ngFor="let ghost of column" 
-        [class.crossedoff]="isGhostExcluded(ghost)" 
-        [class.selected]="isGhostSelected(ghost)"
-        [class.excluded]="isGhostDisproved(ghost)"
-        (click)="ghostClicked(ghost)">
-          {{ ghost.name }}
-        </li>
-      </ul>
+
+<div class="ghost-container">
+  <div class="ghost-column" *ngFor="let column of columns">
+    <div class="ghost-item" *ngFor="let ghost of column" 
+      [class.crossedoff]="isGhostExcluded(ghost)" 
+      [class.selected]="isGhostSelected(ghost)"
+      [class.excluded]="isGhostDisproved(ghost)"
+      (click)="ghostClicked(ghost)">
+        {{ ghost.name }}
     </div>
   </div>
-  </div>
+</div>

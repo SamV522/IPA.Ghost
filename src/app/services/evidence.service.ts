@@ -37,11 +37,19 @@ export class EvidenceService {
   constructor(private httpClient: HttpClient) {
   }
 
+  getPrimaryEvidence(): Observable<Evidence[]> {
+    if (this.evidenceLoaded)
+      return of(this.primaryEvidence);
+    else
+      return this.refreshEvidence().pipe(map(evidence => evidence.filter(e => e.primary)));
+  }
+
   getSecondaryEvidence(): Observable<Evidence[]> {
     if (this.evidenceLoaded)
       return of(this.secondaryEvidence);
-    else
-      return this.refreshEvidence();
+    else {
+      return this.refreshEvidence().pipe(map(evidence => evidence.filter(e => !e.primary)));
+    }
   }
 
   refreshEvidence(): Observable<Evidence[]> {
@@ -53,7 +61,7 @@ export class EvidenceService {
       this.secondaryEvidenceSubject.next(this.secondaryEvidence);
       this.evidenceLoaded = true;
 
-      return this.secondaryEvidence;
+      return allEvidence;
     }));
   }
 

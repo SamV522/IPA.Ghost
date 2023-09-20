@@ -1,14 +1,13 @@
 import { Component } from '@angular/core';
-import { EvidenceService } from '../../services/evidence.service';
-import { Evidence } from '../../models/evidence.model';
+import { Evidence } from 'src/app/models/evidence.model';
+import { EvidenceService } from 'src/app/services/evidence.service';
 
 @Component({
-  selector: 'app-secondary-evidence-list',
-  templateUrl: './secondary-evidence-list.component.html',
-  styleUrls: ['./secondary-evidence-list.component.css'],
-  host: { 'style': 'height: 100%;'}
+  selector: 'app-primary-evidence-list',
+  templateUrl: './primary-evidence-list.component.html',
+  styleUrls: ['./primary-evidence-list.component.css']
 })
-export class SecondaryEvidenceListComponent {
+export class PrimaryEvidenceListComponent {
   evidenceList: any[] = [];
   columns: any[] = [[], []];
 
@@ -18,9 +17,9 @@ export class SecondaryEvidenceListComponent {
   constructor(private evidenceService: EvidenceService  ) {}
 
   ngOnInit() {
-    this.evidenceService.getSecondaryEvidence().subscribe((data) => {
+    this.evidenceService.getPrimaryEvidence().subscribe((data: Evidence[]) => {
       // Sort evidence alphabetically by name
-      this.evidenceList = data.sort((a, b) => a.name.localeCompare(b.name));
+      this.evidenceList = data;
 
       // Calculate how many evidence per column
       const evidencePerColumn = Math.ceil(this.evidenceList.length / this.columns.length);

@@ -1,0 +1,54 @@
+
+  .evidence-container {
+    display: flex;
+    flex-direction: row;
+    width: 280px;
+    padding: 10px 0px 20px 0px;
+    margin: auto;
+  }
+  
+  .evidence-column {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+  }
+  
+  .evidence-item {
+    padding: 5px 5px 5px 5px;
+    height: 20px;
+    overflow: none;
+    user-select: none;
+    display: flex;
+    align-items: center;
+  }
+  
+  .evidence-item:hover {
+    background-color: rgba(127, 161, 255, 0.5);
+    cursor: pointer;
+  }
+  
+  .disproved {
+    font-weight: bold;
+    text-decoration: line-through;
+    text-decoration-thickness: 2px;
+  }
+  
+  .excluded {
+    opacity: 10%;
+  }
+  
+  .proved {
+    font-weight: bolder;
+  }
+  
+  .excluded {
+    opacity: 10%;
+  }
+  
+  .included {
+    font-weight: bold;
+    background-color: rgba(0, 128, 0, 0.4);
+  }
+  
+  
+  

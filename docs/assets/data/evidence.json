@@ -1,5 +1,40 @@
 [
     {
+        "primary": true,
+        "name": "EMF 5",
+        "id": "emf"
+    },
+    {
+        "primary": true,
+        "name": "Ultraviolet",
+        "id": "fingies"
+    },
+    {
+        "primary": true,
+        "name": "Ghost Writing",
+        "id": "ghostwriting"
+    },
+    {
+        "primary": true,
+        "name": "Freezing Temps",
+        "id": "freezing"
+    },
+    {
+        "primary": true,
+        "name": "D.O.T.S. Projector",
+        "id": "dots"
+    },
+    {
+        "primary": true,
+        "name": "Ghost Orbs",
+        "id": "ghostorbs"
+    },
+    {
+        "primary": true,
+        "name": "Spirit Box",
+        "id": "spiritbox"
+    },
+    {
         "name": "Blinking Mostly On",
         "id": "blinkmostlyon"
     },
@@ -16,19 +51,23 @@
         "id": "quiethunting"
     },
     {
-        "name": "Can't Roam",
+        "name": "Can't Roam Far",
         "id": "cantroam"
+    },
+    {
+        "name": "Can't Change Room",
+        "id": "noroomchange"
     },
     {
         "name": "Can't Turn Off Breaker",
         "id": "cantturnoffbreaker"
     },
     {
-        "name": "Ghost Orbs on No Evidence",
+        "name": "Orbs on 0 Evidence",
         "id": "ghostorbson0evidence"
     },
     {
-        "name": "Small Detection Radius (Yokai Check)",
+        "name": "Detection Radius <2.5m",
         "id": "smalldetection"
     },
     {
@@ -36,7 +75,7 @@
         "id": "cantchangetarget"
     },
     {
-        "name": "Heavy breathing (Spirit Box)",
+        "name": "Spirit Box Breathing",
         "id": "heavybreathing"
     },
     {
@@ -64,7 +103,7 @@
         "id": "obakefingers"
     },
     {
-        "name": "Parabolic Mic (Screaming)",
+        "name": "Banshee Screem ParaMic",
         "id": "bansheescream"
     },
     {
@@ -72,15 +111,15 @@
         "id": "cantturnlightson"
     },
     {
-        "name": "Slightly Faster/Slower (1.1-0.9x)",
+        "name": "Hunt Speed 1.1x/0.9x",
         "id": "twinspeed"
     },
     {
-        "name": "Threw Multiple objects at once",
+        "name": "Threw Multiple Objects",
         "id": "throwmultiple"
     },
     {
-        "name": "Player Cursed by Spirit Box/Para Mic",
+        "name": "Spirit Box/ParaMic Curse",
         "id": "moroicurse"
     },
     {
@@ -88,15 +127,15 @@
         "id": "lowsanityspeed"
     },
     {
-        "name": "Slows Down After Reaching Last Known Location",
+        "name": "Slows When Searching",
         "id": "slowsdowninsearcharea"
     },
     {
-        "name": "Speed Boost When Detecting Player",
+        "name": "Detection Speed Boost",
         "id": "speedboostwhendetecting"
     },
     {
-        "name": "Hunt Cooldown < 25 seconds",
+        "name": "Hunt Cooldown < 25s",
         "id": "demonhunts"
     },
     {
@@ -104,7 +143,7 @@
         "id": "fasternearelectronics"
     },
     {
-        "name": "Speed Boost With Line of Sight",
+        "name": "Line of Sight Speed Boost",
         "id": "losspeedboost"
     },
     {
@@ -120,7 +159,15 @@
         "id": "preferssingingevents"
     },
     {
-        "name": "Cold Breath Hunting with Breaker Off",
+        "name": "Cold Breath Hunting",
         "id": "hantubreath"
+    },
+    {
+        "name": "Shapeshift During Hunt",
+        "id": "shapeshifter"
+    },
+    {
+        "name": "D.O.T.S. On Video Only",
+        "id": "goryodots"
     }
 ]

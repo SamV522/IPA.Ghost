@@ -1,0 +1,16 @@
+<div class="evidence-page">
+    <div class="evidence-container">
+      <div class="evidence-column" *ngFor="let column of columns">
+        <div class="evidence-item" *ngFor="let evidence of column"
+          (click)="evidenceClicked(evidence)"
+          [class.proved]="includedEvidence.includes(evidence)"
+          [class.included]="isEvidenceGhostIncluded(evidence)"
+          [class.disproved]="isEvidenceDisproved(evidence)"
+          [class.excluded]="isEvidenceExcluded(evidence)"
+        >
+          {{ evidence.name }}
+        </div>
+      </div>
+    </div>
+  </div>
+  

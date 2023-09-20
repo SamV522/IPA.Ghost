@@ -16,11 +16,21 @@
         <div class="flex-row-container">
           <div class="flex-column-container">
             <!-- ghosts -->
-            <app-ghost-list></app-ghost-list>
+            <div class="ghost-page">
+              <div class="page-header">Primary Evidence</div>
+              <app-primary-evidence-list></app-primary-evidence-list>
+              <app-ghost-list></app-ghost-list>              
+              <div class="page-header">I Picked A Ghost</div>
+              <i class="hidden-subtitle">In Primo Aspectu</i>
+              <!--  In Primo Aspectu -->
+            </div>
           </div>
           <div class="flex-column-container">
             <!-- evidence -->
-            <app-secondary-evidence-list></app-secondary-evidence-list>
+            <div class="evidence-page">
+              <div class="page-header">Secondary Evidence</div>
+              <app-secondary-evidence-list></app-secondary-evidence-list>
+            </div>
           </div>
         </div>
       </div>

@@ -8,8 +8,7 @@ import { GhostService } from '../../services/ghost.service';
 @Component({
   selector: 'app-ghost-list',
   templateUrl: './ghost-list.component.html',
-  styleUrls: ['./ghost-list.component.css'],
-  host: { 'style': 'height: 100%;'}
+  styleUrls: ['./ghost-list.component.css']
 })
 
 export class GhostListComponent {

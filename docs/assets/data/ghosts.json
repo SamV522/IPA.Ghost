@@ -2,18 +2,26 @@
     {
         "name": "Spirit",
         "evidence": [
-            
+            "emf",
+            "freezing",
+            "ghostwriting"
         ]
     },
     {
         "name": "Poltergeist",
         "evidence": [
+            "spiritbox",
+            "fingies",
+            "ghostwriting",
             "throwmultiple"
         ]
     },
     {
         "name": "Mare",
         "evidence": [
+            "ghostorbs",
+            "spiritbox",
+            "ghostwriting",
             "cantturnlightson",
             "turnlightsbackoff"
         ]
@@ -21,30 +29,45 @@
     {
         "name": "Demon",
         "evidence": [
+            "freezing",
+            "fingies",
+            "ghostwriting",
             "demonhunts"
         ]
     },
     {
         "name": "Yokai",
         "evidence": [
+            "ghostorbs",
+            "spiritbox",
+            "dots",
             "smalldetection"
         ]
     },
     {
         "name": "Myling",
         "evidence": [
+            "emf",
+            "fingies",
+            "ghostwriting",
             "quiethunting"
         ]
     },
     {
         "name": "Raiju",
         "evidence": [
+            "emf",
+            "ghostorbs",
+            "dots",
             "fasternearelectronics"
         ]
     },
     {
         "name": "Moroi",
         "evidence": [
+            "spiritbox",
+            "freezing",
+            "ghostwriting",
             "moroicurse",
             "lowsanityspeed"
         ]
@@ -52,12 +75,18 @@
     {
         "name": "Wraith",
         "evidence": [
+            "emf",
+            "spiritbox",
+            "dots",
             "nofootprints"
         ]
     },
     {
         "name": "Banshee",
         "evidence": [
+            "ghostorbs",
+            "fingies",
+            "dots",
             "bansheescream",
             "cantchangetarget",
             "preferssingingevents"
@@ -66,6 +95,9 @@
     {
         "name": "Revenant",
         "evidence": [
+            "ghostorbs",
+            "freezing",
+            "ghostwriting",
             "slowsdowninsearcharea",
             "speedboostwhendetecting"
         ]
@@ -73,30 +105,45 @@
     {
         "name": "Yurei",
         "evidence": [
-
+            "ghostorbs",
+            "freezing",
+            "dots"
         ]
     },
     {
         "name": "Hantu",
         "evidence": [
+            "ghostorbs",
+            "freezing",
+            "fingies",
             "hantubreath"
         ]
     },
     {
         "name": "Onryo",
         "evidence": [
+            "ghostorbs",
+            "spiritbox",
+            "freezing",
             "firelighthunt"
         ]
     },
     {
         "name": "Obake",
         "evidence": [
-            "obakefingers"
+            "emf",
+            "ghostorbs",
+            "fingies",
+            "obakefingers",
+            "shapeshifter"
         ]
     },
     {
         "name": "Deogen",
         "evidence": [
+            "spiritbox",
+            "ghostwriting",
+            "dots",
             "slowwhenclose",
             "fastwhenfar",
             "heavybreathing"
@@ -105,12 +152,18 @@
     {
         "name": "Phantom",
         "evidence": [
+            "spiritbox",
+            "fingies",
+            "dots",
             "blinkmostlyoff"
         ]
     },
     {
         "name": "Jinn",
         "evidence": [
+            "emf",
+            "freezing",
+            "fingies",
             "cantturnoffbreaker",
             "losspeedboost"
         ]
@@ -118,12 +171,18 @@
     {
         "name": "Shade",
         "evidence": [
+            "emf",
+            "freezing",
+            "ghostwriting",
             "nohuntsnearpeople"
         ]
     },
     {
         "name": "Oni",
         "evidence": [
+            "emf",
+            "freezing",
+            "dots",
             "cantairball",
             "blinkmostlyon"
         ]
@@ -131,25 +190,39 @@
     {
         "name": "Goryo",
         "evidence": [
-            "cantroam"
+            "emf",
+            "fingies",
+            "dots",
+            "cantroam",
+            "goryodots",
+            "noroomchange"
         ]
     },
     {
         "name": "The Twins",
         "evidence": [
+            "emf",
+            "spiritbox",
+            "freezing",
             "twinspeed"
         ]
     },
     {
         "name": "The Mimic",
         "evidence": [
+            "ghostorbs",
+            "fingies",
+            "spiritbox",
+            "freezing",
             "ghostorbson0evidence"
         ]
     },
     {
         "name": "Thaye",
         "evidence": [
-            
+            "ghostorbs",
+            "ghostwriting",
+            "dots"
         ]
     }
 ]
