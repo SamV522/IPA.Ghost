@@ -1,5 +1,40 @@
 [
     {
+        "primary": true,
+        "name": "Ghost Orbs",
+        "id": "ghostorbs"
+    },
+    {
+        "primary": true,
+        "name": "EMF 5",
+        "id": "emf"
+    },
+    {
+        "primary": true,
+        "name": "D.O.T.S.",
+        "id": "dots"
+    },
+    {
+        "primary": true,
+        "name": "Ultraviolet",
+        "id": "fingies"
+    },
+    {
+        "primary": true,
+        "name": "Freezing Temps",
+        "id": "Freezing Temps"
+    },
+    {
+        "primary": true,
+        "name": "Ghost Writing",
+        "id": "ghostwriting"
+    },
+    {
+        "primary": true,
+        "name": "Spirit Box",
+        "id": "spiritbox"
+    },
+    {
         "name": "Blinking Mostly On",
         "id": "blinkmostlyon"
     },
@@ -122,5 +157,9 @@
     {
         "name": "Cold Breath Hunting with Breaker Off",
         "id": "hantubreath"
+    },
+    {
+        "name": "Shapeshift During Hunt",
+        "id": "shapeshifter"
     }
 ]

@@ -3,12 +3,12 @@ import { EvidenceService } from '../../services/evidence.service';
 import { Evidence } from '../../models/evidence.model';
 
 @Component({
-  selector: 'app-evidence-list',
-  templateUrl: './evidence-list.component.html',
-  styleUrls: ['./evidence-list.component.css'],
+  selector: 'app-secondary-evidence-list',
+  templateUrl: './secondary-evidence-list.component.html',
+  styleUrls: ['./secondary-evidence-list.component.css'],
   host: { 'style': 'height: 100%;'}
 })
-export class EvidenceListComponent {
+export class SecondaryEvidenceListComponent {
   evidenceList: any[] = [];
   columns: any[] = [[], []];
 
@@ -18,7 +18,7 @@ export class EvidenceListComponent {
   constructor(private evidenceService: EvidenceService  ) {}
 
   ngOnInit() {
-    this.evidenceService.refreshEvidence().subscribe((data) => {
+    this.evidenceService.getSecondaryEvidence().subscribe((data) => {
       // Sort evidence alphabetically by name
       this.evidenceList = data.sort((a, b) => a.name.localeCompare(b.name));
 

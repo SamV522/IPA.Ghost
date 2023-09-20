@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Observable, Subject, map, of } from 'rxjs';
 import { Evidence } from '../models/evidence.model';
 import { HttpClient } from '@angular/common/http';
-import { GhostService } from './ghost.service';
 
 @Injectable({
   providedIn: 'root'
@@ -10,9 +9,14 @@ import { GhostService } from './ghost.service';
 export class EvidenceService {
 
   private evidenceLoaded = false;
-  private evidence: Evidence[] = [];
-  private evidenceSubject = new Subject<Evidence[]>();
-  public onEvidenceUpdated$ = this.evidenceSubject.asObservable();
+
+  private primaryEvidence: Evidence[] = [];
+  private primaryEvidenceSubject = new Subject<Evidence[]>();
+  public onPrimaryEvidenceUpdated$ = this.primaryEvidenceSubject.asObservable();
+
+  private secondaryEvidence: Evidence[] = [];
+  private secondaryEvidenceSubject = new Subject<Evidence[]>();
+  public onSecondaryEvidenceUpdated$ = this.secondaryEvidenceSubject.asObservable();
 
   private includedEvidence: Evidence[] = [];
   private includedEvidenceSubject = new Subject<Evidence[]>();
@@ -33,20 +37,23 @@ export class EvidenceService {
   constructor(private httpClient: HttpClient) {
   }
 
-  getEvidence(): Observable<Evidence[]> {
+  getSecondaryEvidence(): Observable<Evidence[]> {
     if (this.evidenceLoaded)
-      return of(this.evidence);
+      return of(this.secondaryEvidence);
     else
       return this.refreshEvidence();
   }
 
   refreshEvidence(): Observable<Evidence[]> {
-    return this.httpClient.get<Evidence[]>('./assets/data/evidence.json').pipe(map(evidence => {
-      this.evidence = evidence;
-      this.evidenceSubject.next(this.evidence);
+    return this.httpClient.get<Evidence[]>('./assets/data/evidence.json').pipe(map(allEvidence => {
+      this.primaryEvidence = allEvidence.filter(evidence => evidence.primary);
+      this.primaryEvidenceSubject.next(this.primaryEvidence);
+
+      this.secondaryEvidence = allEvidence.filter(evidence => !evidence.primary);
+      this.secondaryEvidenceSubject.next(this.secondaryEvidence);
       this.evidenceLoaded = true;
 
-      return this.evidence;
+      return this.secondaryEvidence;
     }));
   }
 
@@ -71,9 +78,9 @@ export class EvidenceService {
 
   getEvidenceById(id: string): Evidence | null
   {
-    const index = this.evidence.findIndex(evidence => evidence.id == id);
+    const index = this.secondaryEvidence.findIndex(evidence => evidence.id == id);
     if (index >= 0)
-      return this.evidence[index];
+      return this.secondaryEvidence[index];
     else
       return null;
   }
