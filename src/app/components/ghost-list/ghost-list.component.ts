@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Ghost } from '../../models/ghost.model';
 import { Subject, takeUntil } from 'rxjs';
 import { EvidenceService as EvidenceService } from '../../services/evidence.service';
 import { Evidence } from '../../models/evidence.model';
-import { GhostService } from 'src/app/services/ghost.service';
+import { GhostService } from '../../services/ghost.service';
 
 @Component({
   selector: 'app-ghost-list',

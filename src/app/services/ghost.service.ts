@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { EvidenceService } from './evidence.service';
 import { Ghost } from '../models/ghost.model';
-import { Evidence } from '../models/evidence.model';
 import { HttpClient } from '@angular/common/http';
-import { Observable, Subject, combineLatest, concat, forkJoin, map, of } from 'rxjs';
+import { Observable, Subject, combineLatest, map, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
