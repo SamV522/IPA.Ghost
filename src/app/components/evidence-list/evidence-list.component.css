@@ -1,0 +1,64 @@
+.evidence-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 0px 20px 0px 20px;
+  height: 100%;
+  margin: auto;
+  padding-left: 60px;
+  background: linear-gradient(to right,rgba(0,0,0,0.1), rgba(0,0,0,0.1),rgba(0,0,0,0.0),rgba(0,0,0,0), rgba(0,0,0,0));
+}
+
+.evidence-container {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.evidence-column {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.evidence-item {
+  padding: 5px 5px 5px 5px;
+  height: 30px;
+  overflow: none;
+  user-select: none;
+  display: flex;
+  align-items: center;
+}
+
+.evidence-item:hover {
+  background-color: rgba(127, 161, 255, 0.5);
+  cursor: pointer;
+}
+
+.disproved {
+  font-weight: bold;
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+  background: linear-gradient(to right, rgba(128, 128, 128, 0.3), rgba(128, 128, 128, 0))
+}
+
+.excluded {
+  opacity: 10%;
+}
+
+.proved {
+  font-weight: bolder;
+}
+
+.excluded {
+  opacity: 10%;
+}
+
+.included {
+  font-weight: bold;
+  background-color: rgba(0, 128, 0, 0.4);
+}
+
+

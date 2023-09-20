@@ -1,0 +1,126 @@
+[
+    {
+        "name": "Blinking Mostly On",
+        "id": "blinkmostlyon"
+    },
+    {
+        "name": "Blinking Mostly Off",
+        "id": "blinkmostlyoff"
+    },
+    {
+        "name": "Blinking Normal",
+        "id": "blinknormal"
+    },
+    {
+        "name": "Quiet while hunting",
+        "id": "quiethunting"
+    },
+    {
+        "name": "Can't Roam",
+        "id": "cantroam"
+    },
+    {
+        "name": "Can't Turn Off Breaker",
+        "id": "cantturnoffbreaker"
+    },
+    {
+        "name": "Ghost Orbs on No Evidence",
+        "id": "ghostorbson0evidence"
+    },
+    {
+        "name": "Small Detection Radius (Yokai Check)",
+        "id": "smalldetection"
+    },
+    {
+        "name": "Can't Change Target",
+        "id": "cantchangetarget"
+    },
+    {
+        "name": "Heavy breathing (Spirit Box)",
+        "id": "heavybreathing"
+    },
+    {
+        "name": "Really slow when close",
+        "id": "slowwhenclose"
+    },
+    {
+        "name": "Really fast when far away",
+        "id": "fastwhenfar"
+    },
+    {
+        "name": "Can't Airball Event",
+        "id": "cantairball"
+    },
+    {
+        "name": "Firelight Hunt",
+        "id": "firelighthunt"
+    },
+    {
+        "name": "Has No Footprints",
+        "id": "nofootprints"
+    },
+    {
+        "name": "More than 5 Fingers",
+        "id": "obakefingers"
+    },
+    {
+        "name": "Parabolic Mic (Screaming)",
+        "id": "bansheescream"
+    },
+    {
+        "name": "Can't Turn Lights On",
+        "id": "cantturnlightson"
+    },
+    {
+        "name": "Slightly Faster/Slower (1.1-0.9x)",
+        "id": "twinspeed"
+    },
+    {
+        "name": "Threw Multiple objects at once",
+        "id": "throwmultiple"
+    },
+    {
+        "name": "Player Cursed by Spirit Box/Para Mic",
+        "id": "moroicurse"
+    },
+    {
+        "name": "Speed Changed by Sanity",
+        "id": "lowsanityspeed"
+    },
+    {
+        "name": "Slows Down After Reaching Last Known Location",
+        "id": "slowsdowninsearcharea"
+    },
+    {
+        "name": "Speed Boost When Detecting Player",
+        "id": "speedboostwhendetecting"
+    },
+    {
+        "name": "Hunt Cooldown < 25 seconds",
+        "id": "demonhunts"
+    },
+    {
+        "name": "Faster Near Electronics",
+        "id": "fasternearelectronics"
+    },
+    {
+        "name": "Speed Boost With Line of Sight",
+        "id": "losspeedboost"
+    },
+    {
+        "name": "No Hunts Near People",
+        "id": "nohuntsnearpeople"
+    },
+    {
+        "name": "Light Turned Off After Being Turned On",
+        "id": "turnlightsbackoff"
+    },
+    {
+        "name": "Prefers Singing Events",
+        "id": "preferssingingevents"
+    },
+    {
+        "name": "Cold Breath Hunting with Breaker Off",
+        "id": "hantubreath"
+    }
+]
