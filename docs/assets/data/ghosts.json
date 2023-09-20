@@ -1,0 +1,155 @@
+[
+    {
+        "name": "Spirit",
+        "evidence": [
+            
+        ]
+    },
+    {
+        "name": "Poltergeist",
+        "evidence": [
+            "throwmultiple"
+        ]
+    },
+    {
+        "name": "Mare",
+        "evidence": [
+            "cantturnlightson",
+            "turnlightsbackoff"
+        ]
+    },
+    {
+        "name": "Demon",
+        "evidence": [
+            "demonhunts"
+        ]
+    },
+    {
+        "name": "Yokai",
+        "evidence": [
+            "smalldetection"
+        ]
+    },
+    {
+        "name": "Myling",
+        "evidence": [
+            "quiethunting"
+        ]
+    },
+    {
+        "name": "Raiju",
+        "evidence": [
+            "fasternearelectronics"
+        ]
+    },
+    {
+        "name": "Moroi",
+        "evidence": [
+            "moroicurse",
+            "lowsanityspeed"
+        ]
+    },
+    {
+        "name": "Wraith",
+        "evidence": [
+            "nofootprints"
+        ]
+    },
+    {
+        "name": "Banshee",
+        "evidence": [
+            "bansheescream",
+            "cantchangetarget",
+            "preferssingingevents"
+        ]
+    },
+    {
+        "name": "Revenant",
+        "evidence": [
+            "slowsdowninsearcharea",
+            "speedboostwhendetecting"
+        ]
+    },
+    {
+        "name": "Yurei",
+        "evidence": [
+
+        ]
+    },
+    {
+        "name": "Hantu",
+        "evidence": [
+            "hantubreath"
+        ]
+    },
+    {
+        "name": "Onryo",
+        "evidence": [
+            "firelighthunt"
+        ]
+    },
+    {
+        "name": "Obake",
+        "evidence": [
+            "obakefingers"
+        ]
+    },
+    {
+        "name": "Deogen",
+        "evidence": [
+            "slowwhenclose",
+            "fastwhenfar",
+            "heavybreathing"
+        ]
+    },
+    {
+        "name": "Phantom",
+        "evidence": [
+            "blinkmostlyoff"
+        ]
+    },
+    {
+        "name": "Jinn",
+        "evidence": [
+            "cantturnoffbreaker",
+            "losspeedboost"
+        ]
+    },
+    {
+        "name": "Shade",
+        "evidence": [
+            "nohuntsnearpeople"
+        ]
+    },
+    {
+        "name": "Oni",
+        "evidence": [
+            "cantairball",
+            "blinkmostlyon"
+        ]
+    },
+    {
+        "name": "Goryo",
+        "evidence": [
+            "cantroam"
+        ]
+    },
+    {
+        "name": "The Twins",
+        "evidence": [
+            "twinspeed"
+        ]
+    },
+    {
+        "name": "The Mimic",
+        "evidence": [
+            "ghostorbson0evidence"
+        ]
+    },
+    {
+        "name": "Thaye",
+        "evidence": [
+            
+        ]
+    }
+]
