@@ -41,7 +41,7 @@ export class EvidenceService {
   }
 
   refreshEvidence(): Observable<Evidence[]> {
-    return this.httpClient.get<Evidence[]>('/assets/data/evidence.json').pipe(map(evidence => {
+    return this.httpClient.get<Evidence[]>('./assets/data/evidence.json').pipe(map(evidence => {
       this.evidence = evidence;
       this.evidenceSubject.next(this.evidence);
       this.evidenceLoaded = true;

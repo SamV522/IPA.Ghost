@@ -72,7 +72,7 @@ export class GhostService {
   }
 
   refreshGhosts() {
-    return this.httpClient.get<Ghost[]>('/assets/data/ghosts.json').pipe(map(ghosts => {
+    return this.httpClient.get<Ghost[]>('./assets/data/ghosts.json').pipe(map(ghosts => {
       this.ghosts = ghosts;
       this.ghostsSubject.next(this.ghosts);
       this.ghostsLoaded = true;
