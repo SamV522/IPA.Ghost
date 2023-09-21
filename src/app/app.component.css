@@ -10,7 +10,7 @@ div.book-container {
     background-color: #a39f71;
 }
 
-div.ghost-page {
+div.left-page {
     display: flex;
     box-sizing: border-box;
     flex-direction: column;
@@ -21,7 +21,7 @@ div.ghost-page {
     background: linear-gradient(to left, rgba(0,0,0,0.2),rgba(0,0,0,0.05),rgba(0,0,0,0.0),rgba(0,0,0,0), rgba(0,0,0,0));
 }
 
-div.evidence-page {
+div.right-page {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -29,7 +29,7 @@ div.evidence-page {
     padding: 0px 20px 0px 30px;
     height: 100%;
     margin: auto;
-    background: linear-gradient(to right,rgba(0,0,0,0.1), rgba(0,0,0,0.1),rgba(0,0,0,0.0),rgba(0,0,0,0), rgba(0,0,0,0));
+    background: linear-gradient(to right, rgba(0,0,0,0.1), rgba(0,0,0,0.1),rgba(0,0,0,0.0),rgba(0,0,0,0), rgba(0,0,0,0));
   }
 
 div.page-header {
