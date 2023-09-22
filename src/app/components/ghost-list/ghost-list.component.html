@@ -1,12 +1,29 @@
 
 <div class="ghost-container">
   <div class="ghost-column" *ngFor="let column of columns">
-    <div class="ghost-item" *ngFor="let ghost of column" 
-      [class.crossedoff]="isGhostExcluded(ghost)" 
+    <div class="ghost-item" *ngFor="let ghost of column"
       [class.selected]="isGhostSelected(ghost)"
       [class.excluded]="isGhostDisproved(ghost)"
       (click)="ghostClicked(ghost)">
-        {{ ghost.name }}
+        <div 
+        [class.selected-text]="isGhostSelected(ghost)"
+        [class.crossedoff]="isGhostExcluded(ghost)">
+          {{ ghost.name }}
+        </div>
+        <div class="ghost-detail-row" [class.excluded]="isGhostExcluded(ghost)">
+          <div class="ghost-speed-detail"
+            [class.safe-speed]="ghost.speed.normal < 1.7"
+            [class.danger-speed]="ghost.speed.normal > 1.7">
+            <img src="../../../assets/img/footsteps.png" width="10" height="10" />
+            {{ ghost.speed.normal | number: '1.1' }}
+          </div>
+          <div class="ghost-sanity-detail"
+            [class.safe-sanity]="ghost.sanity.max < 50"
+            [class.danger-sanity]="ghost.sanity.max > 50">
+            <img src="../../../assets/img/sanity.png" width="10px" height="10px" />
+            {{ ghost.sanity.max }}%
+          </div>
+        </div>
     </div>
   </div>
 </div>
