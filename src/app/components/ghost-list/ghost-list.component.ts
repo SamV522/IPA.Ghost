@@ -27,7 +27,6 @@ export class GhostListComponent {
     this.ghostService.getGhosts().subscribe((data) => {
       // Sort ghosts alphabetically by name
       this.ghosts = data;
-      
       // Calculate how many ghosts per column
       const ghostsPerColumn = Math.ceil(this.ghosts.length / 3);
 
