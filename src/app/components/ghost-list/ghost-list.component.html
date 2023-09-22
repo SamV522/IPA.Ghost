@@ -5,7 +5,7 @@
       [class.selected]="isGhostSelected(ghost)"
       [class.excluded]="isGhostDisproved(ghost)"
       (click)="ghostClicked(ghost)">
-        <div 
+        <div
         [class.selected-text]="isGhostSelected(ghost)"
         [class.crossedoff]="isGhostExcluded(ghost)">
           {{ ghost.name }}
@@ -27,3 +27,4 @@
     </div>
   </div>
 </div>
+<div class="ipag" (click)="resetEvidence()">I Picked A Ghost</div>

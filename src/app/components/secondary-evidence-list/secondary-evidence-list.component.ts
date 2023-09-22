@@ -64,7 +64,7 @@ export class SecondaryEvidenceListComponent {
       {
         // remove from excluded
         this.excludedEvidence.splice(excludedIndex, 1);
-        this.evidenceService.removeExclusiveEvidence(evidence);
+        this.evidenceService.removeExcludedEvidence(evidence);
       } else {
         // add to included
         this.includedEvidence.push(evidence);

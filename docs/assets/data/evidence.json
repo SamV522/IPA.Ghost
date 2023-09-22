@@ -43,10 +43,6 @@
         "id": "blinkmostlyoff"
     },
     {
-        "name": "Blinking Normal",
-        "id": "blinknormal"
-    },
-    {
         "name": "Quiet while hunting",
         "id": "quiethunting"
     },

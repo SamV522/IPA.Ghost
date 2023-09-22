@@ -108,6 +108,11 @@ export class GhostListComponent {
     this.evidenceService.addGhostExcludedEvidences(ghost.evidence);
   }
 
+  resetEvidence() {
+    this.ghostService.clearAllGhosts();
+    this.evidenceService.clearAllEvidence();
+  }
+
   isGhostDisproved(ghost: Ghost): boolean {
     return this.ghostService.isGhostDisproved(ghost);
   }

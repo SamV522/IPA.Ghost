@@ -55,6 +55,24 @@ div.ghost-sanity-detail {
   opacity: 20%;
 }
 
+div.ipag {
+  padding-top: 10px;
+  font-size: 26px;
+  font-weight: bold;
+  text-align: center;
+  height: auto;
+  user-select: none;
+  cursor: pointer;
+}
+
+div.ipag:hover {
+  opacity: 80%;
+}
+div.ipag:active {
+  font-weight: bolder;
+  color: rgb(40,40,40)
+}
+
 .crossedoff  {
   font-weight: bold;
   text-decoration: line-through;

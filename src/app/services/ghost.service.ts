@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { EvidenceService } from './evidence.service';
 import { Ghost } from '../models/ghost.model';
 import { HttpClient } from '@angular/common/http';
-import { Observable, Subject, combineLatest, map, of } from 'rxjs';
+import { Observable, Subject, combineLatest, map, startWith, of, forkJoin } from 'rxjs';
+import { Evidence } from '../models/evidence.model';
 
 @Injectable({
   providedIn: 'root'
@@ -28,12 +29,15 @@ export class GhostService {
 
 
   constructor(private httpClient: HttpClient, private evidenceService: EvidenceService) 
-  {     
-    combineLatest([this.evidenceService.onExcludedEvidenceUpdated$, this.evidenceService.onIncludedEvidenceUpdated$]).subscribe(combined => {
+  {
+    const ev: Evidence[] = []
+    combineLatest(
+      [
+        this.evidenceService.onExcludedEvidenceUpdated$.pipe(startWith([])),
+        this.evidenceService.onIncludedEvidenceUpdated$.pipe(startWith([]))
+    ])
+    .subscribe(([excluded,included]) => {
       this.ghosts.forEach( ghost => this.removeDisprovedGhost(ghost));
-
-      const excluded = combined[0];
-      const included = combined[1];
 
       // Disproved if any evidence excluded
       this.ghosts
@@ -125,6 +129,11 @@ export class GhostService {
     }
   }
 
+  clearDisprovedGhosts() {
+    this.disprovedGhosts = []
+    this.disprovedGhostsSubject.next(this.disprovedGhosts);
+  }
+
   addExcludedGhosts(excluded: Ghost){
     if (!this.excludedGhosts.includes(excluded))
     {
@@ -142,5 +151,16 @@ export class GhostService {
       this.excludedGhostsSubject.next(this.excludedGhosts);
       this.evidenceService.removeGhostExcludedEvidences(excluded.evidence);
     }
+  }
+
+  clearExcludedGhosts() {
+    this.excludedGhosts = []
+    this.excludedGhostsSubject.next(this.excludedGhosts);
+  }
+
+  clearAllGhosts()
+  {
+    this.clearDisprovedGhosts();
+    this.clearExcludedGhosts();
   }
 }
