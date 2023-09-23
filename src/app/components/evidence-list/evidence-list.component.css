@@ -1,7 +1,6 @@
 .evidence-container {
   display: flex;
   flex-direction: row;
-  gap: 5px;
 }
 
 .evidence-column {
@@ -28,7 +27,6 @@
   font-weight: bold;
   text-decoration: line-through;
   text-decoration-thickness: 2px;
-  background: linear-gradient(to right, rgba(128, 128, 128, 0.3), rgba(128, 128, 128, 0))
 }
 
 .excluded {

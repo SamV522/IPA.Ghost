@@ -147,7 +147,7 @@
         "id": "nohuntsnearpeople"
     },
     {
-        "name": "Light Turned Off After Being Turned On",
+        "name": "Light Turned Back Off",
         "id": "turnlightsbackoff"
     },
     {
@@ -165,5 +165,9 @@
     {
         "name": "D.O.T.S. On Video Only",
         "id": "goryodots"
+    },
+    {
+        "name": "Exit Closed w/o Event/Hunt",
+        "id": "yureislam"
     }
 ]

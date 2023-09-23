@@ -1,26 +1,31 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { EvidenceService } from '../../services/evidence.service';
 import { Evidence } from '../../models/evidence.model';
+import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'app-secondary-evidence-list',
-  templateUrl: './secondary-evidence-list.component.html',
-  styleUrls: ['./secondary-evidence-list.component.css']
+  selector: 'app-evidence-list',
+  templateUrl: './evidence-list.component.html',
+  styleUrls: ['./evidence-list.component.css']
 })
-export class SecondaryEvidenceListComponent {
-  evidenceList: any[] = [];
-  columns: any[] = [[], []];
+export class EvidenceListComponent {
 
-  includedEvidence: Evidence[] = [];
-  excludedEvidence: Evidence[] = [];
+  @Input() evidence!: Observable<Evidence[]>;
+  @Input() alphabeticalSort: boolean = false;
+  @Input() columns: any = [[], []]
+
+  evidenceList: any[] = [];
 
   constructor(private evidenceService: EvidenceService  ) {}
 
   ngOnInit() {
-    this.evidenceService.getSecondaryEvidence().subscribe((data: Evidence[]) => {
+    this.evidence.subscribe((data) => {
       // Sort evidence alphabetically by name
-      this.evidenceList = data.sort((a, b) => a.name.localeCompare(b.name));
-
+      if(this.alphabeticalSort)
+        this.evidenceList = data.sort((a, b) => a.name.localeCompare(b.name));
+      else
+        this.evidenceList = data;
+  
       // Calculate how many evidence per column
       const evidencePerColumn = Math.ceil(this.evidenceList.length / this.columns.length);
       
@@ -28,6 +33,7 @@ export class SecondaryEvidenceListComponent {
       for (let i = 0; i < this.columns.length; i++) {
         this.columns[i] = this.evidenceList.slice(i * evidencePerColumn, (i + 1) * evidencePerColumn);
       }
+
     });
   }
 
@@ -36,42 +42,43 @@ export class SecondaryEvidenceListComponent {
     return this.evidenceService.isEvidenceGhostIncluded(evidence);
   }
 
+  isEvidenceGhostExcluded(evidence: Evidence): boolean
+  {
+    return this.evidenceService.isEvidenceGhostExcluded(evidence);
+  }
+
   isEvidenceIncluded(evidence: Evidence): boolean {
     return this.evidenceService.isEvidenceIncluded(evidence);
   }
 
   isEvidenceDisproved(evidence: Evidence)
   {
-    return this.evidenceService.isEvidenceDisproved(evidence)
+    return this.evidenceService.isEvidenceDisproved(evidence);
   }
 
   isEvidenceExcluded(evidence: Evidence)
   {
-    return this.evidenceService.isEvidenceExcluded(evidence)
+    return this.evidenceService.isEvidenceDisproved(evidence) || this.evidenceService.isEvidenceGhostExcluded(evidence);
   }
 
   evidenceClicked(evidence: Evidence)
   {
-    const includedIndex = this.includedEvidence.indexOf(evidence);
-    const excludedIndex = this.excludedEvidence.indexOf(evidence);
-
-    if (this.includedEvidence.includes(evidence))
+    if(this.isEvidenceGhostExcluded(evidence) && !this.isEvidenceExcluded(evidence))
+      return;
+    
+    if (this.isEvidenceIncluded(evidence))
     {
       // remove from included
-      this.includedEvidence.splice(includedIndex, 1);
       this.evidenceService.removeIncludedEvidence(evidence);
       // add to excluded
-      this.excludedEvidence.push(evidence);
       this.evidenceService.addExcludedEvidence(evidence);
     } else {
-      if (this.excludedEvidence.includes(evidence))
+      if (this.isEvidenceExcluded(evidence))
       {
         // remove from excluded
-        this.excludedEvidence.splice(excludedIndex, 1);
         this.evidenceService.removeExcludedEvidence(evidence);
       } else {
         // add to included
-        this.includedEvidence.push(evidence);
         this.evidenceService.addIncludedEvidence(evidence);
       }
     }

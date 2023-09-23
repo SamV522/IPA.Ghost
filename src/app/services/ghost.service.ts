@@ -30,7 +30,6 @@ export class GhostService {
 
   constructor(private httpClient: HttpClient, private evidenceService: EvidenceService) 
   {
-    const ev: Evidence[] = []
     combineLatest(
       [
         this.evidenceService.onExcludedEvidenceUpdated$.pipe(startWith([])),
@@ -41,16 +40,16 @@ export class GhostService {
 
       // Disproved if any evidence excluded
       this.ghosts
-        .filter( ghost => !this.disprovedGhosts.includes(ghost)) // Ghosts that haven't been excluded yet
+        .filter( ghost => !this.disprovedGhosts.some(gh => gh.name == ghost.name)) // Ghosts that haven't been excluded yet
         .filter( ghost => excluded.some(evidence => ghost.evidence.includes(evidence.id))) // That have any excluded evidence
         .forEach( ghost => this.addDisprovedGhost(ghost));
 
       // Disprove any that don't have ALL included evidence  
       this.ghosts
-        .filter( ghost => !this.disprovedGhosts.includes(ghost)) // Ghosts that haven't been excluded yet
+        .filter( ghost => !this.disprovedGhosts.some(gh => gh.name == ghost.name)) // Ghosts that haven't been excluded yet
         .filter( ghost => !included.every(evidence => ghost.evidence.includes(evidence.id))) // That don't have ALL the included evidence
         .forEach( ghost => this.addDisprovedGhost(ghost));
-    })
+    });
   }
 
   isSelectedGhost(ghost: Ghost) {
@@ -88,7 +87,7 @@ export class GhostService {
     let ghostEvidence = new Set<string>();
     
     targetGhosts.forEach((ghost) => {
-      if (!excluded.includes(ghost))
+      if (!excluded.some(gh => gh.name == ghost.name))
       {
         ghost.evidence.forEach((evidenceId) => {
           ghostEvidence.add(evidenceId);
@@ -98,15 +97,17 @@ export class GhostService {
 
     const includedGhostEvidence: string[] = Array.from(ghostEvidence);
 
-    return excluded.flatMap(ghost => { return ghost.evidence; }).filter(evidence => !includedGhostEvidence.includes(evidence));
+    const evidenceToExclude = excluded.flatMap(ghost => { return ghost.evidence; }).filter(evidence => !includedGhostEvidence.includes(evidence));
+
+    return evidenceToExclude;
   }
 
   isGhostDisproved(ghost: Ghost){
-    return this.disprovedGhosts.includes(ghost);
+    return this.disprovedGhosts.some(gh => gh.name == ghost.name);
   }
 
   isGhostExcluded(ghost: Ghost){
-    return this.excludedGhosts.includes(ghost);
+    return this.excludedGhosts.some(gh => gh.name == ghost.name);
   }
   
   addDisprovedGhost(disproved: Ghost) {

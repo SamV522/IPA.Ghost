@@ -18,7 +18,7 @@
             <div class="left-page">
               <div class="page-header">Primary Evidence</div>
               <!-- primary evidence -->
-              <app-primary-evidence-list></app-primary-evidence-list>
+              <app-evidence-list class="primary-evidence-container" [evidence]="this.evidenceService.getPrimaryEvidence()"></app-evidence-list>
               <!-- ghosts -->
               <app-ghost-list></app-ghost-list>
               <i class="hidden-subtitle">In Primo Aspectu</i>
@@ -29,7 +29,7 @@
             <div class="right-page">
               <div class="page-header">Secondary Evidence</div>
               <!-- evidence -->
-              <app-secondary-evidence-list></app-secondary-evidence-list>
+              <app-evidence-list [evidence]="this.evidenceService.getSecondaryEvidence()" [alphabeticalSort]="true"></app-evidence-list>
             </div>
           </div>
         </div>

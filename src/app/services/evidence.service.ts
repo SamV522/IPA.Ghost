@@ -10,46 +10,59 @@ export class EvidenceService {
 
   private evidenceLoaded = false;
 
-  private evidence: Evidence[] = [];
+  private _evidence: Evidence[] = [];
   private evidenceSubject = new Subject<Evidence[]>();
   public onEvidenceUpdated$ = this.evidenceSubject.asObservable();
 
-  private includedEvidence: Evidence[] = [];
+  private _includedEvidence: Evidence[] = [];
   private includedEvidenceSubject = new Subject<Evidence[]>();
   public onIncludedEvidenceUpdated$ = this.includedEvidenceSubject.asObservable();
 
-  private excludedEvidence: Evidence[] = [];
+  private _excludedEvidence: Evidence[] = [];
   private excludedEvidenceSubject = new Subject<Evidence[]>();
   public onExcludedEvidenceUpdated$ = this.excludedEvidenceSubject.asObservable();
 
-  private ghostIncludedEvidence: Evidence[] = [];
+  private _ghostIncludedEvidence: Evidence[] = [];
   private ghostIncludedEvidenceSubject = new Subject<Evidence[]>();
   public onGhostIncludedEvidenceUpdated$ = this.ghostIncludedEvidenceSubject.asObservable();
 
-  private ghostExcludedEvidence: Evidence[] = [];
+  private _ghostExcludedEvidence: Evidence[] = [];
   private ghostExcludedEvidenceSubject = new Subject<Evidence[]>();
   public onGhostExcludedEvidenceUpdated$ = this.ghostExcludedEvidenceSubject.asObservable();
 
   constructor(private httpClient: HttpClient) {
   }
 
+  get evidence() { 
+    return { 
+      included: this._includedEvidence, 
+      excluded: this._excludedEvidence,
+      ghostIncluded: this._ghostIncludedEvidence,
+      ghostExcluded: this._ghostExcludedEvidence
+    }
+  }
+  get includedEvidence() { return this._includedEvidence; }
+  get excludedEvidence() { return this._excludedEvidence; }
+  get ghostIncludedEvidence() { return this._ghostIncludedEvidence; }
+  get ghostExcludedEvidence() { return this._ghostExcludedEvidence; }
+
   getEvidence(): Observable<Evidence[]> {
     if(this.evidenceLoaded)
-      return of(this.evidence);
+      return of(this._evidence);
     else
       return this.refreshEvidence();
   }
 
   getPrimaryEvidence(): Observable<Evidence[]> {
     if (this.evidenceLoaded)
-      return of(this.evidence.filter(evidence => evidence.primary));
+      return of(this._evidence.filter(evidence => evidence.primary));
     else
       return this.refreshEvidence().pipe(map(evidence => evidence.filter(e => e.primary)));
   }
 
   getSecondaryEvidence(): Observable<Evidence[]> {
     if (this.evidenceLoaded)
-      return of(this.evidence.filter(evidence => !evidence.primary));
+      return of(this._evidence.filter(evidence => !evidence.primary));
     else {
       return this.refreshEvidence().pipe(map(evidence => evidence.filter(e => !e.primary)));
     }
@@ -64,8 +77,8 @@ export class EvidenceService {
 
   refreshEvidence(): Observable<Evidence[]> {
     return this.httpClient.get<Evidence[]>('./assets/data/evidence.json').pipe(map(data => {
-      this.evidence = data;
-      this.evidenceSubject.next(this.evidence);
+      this._evidence = data;
+      this.evidenceSubject.next(this._evidence);
 
       return data;
     }));
@@ -73,33 +86,33 @@ export class EvidenceService {
 
   addIncludedEvidence(evidence: Evidence)
   {
-    if (!this.includedEvidence.includes(evidence))
+    if (!this._includedEvidence.some(ev => ev.id == evidence.id))
     {
-      this.includedEvidence.push(evidence)
-      this.includedEvidenceSubject.next(this.includedEvidence);
+      this._includedEvidence.push(evidence)
+      this.includedEvidenceSubject.next(this._includedEvidence);
     }
   }
 
   removeIncludedEvidence(evidence: Evidence)
   {
-    const index = this.includedEvidence.indexOf(evidence);
+    const index = this._includedEvidence.indexOf(evidence);
     if (index >= 0)
     {
-      this.includedEvidence.splice(index);
-      this.includedEvidenceSubject.next(this.includedEvidence);
+      this._includedEvidence.splice(index);
+      this.includedEvidenceSubject.next(this._includedEvidence);
     }
   }
 
   clearIncludedEvidence() {
-    this.includedEvidence = [];
-    this.includedEvidenceSubject.next(this.includedEvidence);
+    this._includedEvidence = [];
+    this.includedEvidenceSubject.next(this._includedEvidence);
   }
 
   getEvidenceById(id: string): Evidence | null
   {
-    const index = this.evidence.concat(this.evidence).findIndex(evidence => evidence.id == id);
+    const index = this._evidence.findIndex(evidence => evidence.id == id);
     if (index >= 0)
-      return this.evidence.concat(this.evidence)[index];
+      return this._evidence[index];
     else
       return null;
   }
@@ -110,10 +123,10 @@ export class EvidenceService {
       const evidence = this.getEvidenceById(evidenceId)
       if (evidence)
       {
-        if (!this.ghostIncludedEvidence.includes(evidence))
+        if (!this._ghostIncludedEvidence.some(ev => ev.id == evidence.id))
         {
-          this.ghostIncludedEvidence.push(evidence);
-          this.ghostExcludedEvidenceSubject.next(this.ghostIncludedEvidence);
+          this._ghostIncludedEvidence.push(evidence);
+          this.ghostExcludedEvidenceSubject.next(this._ghostIncludedEvidence);
         }
       }
       else
@@ -127,11 +140,11 @@ export class EvidenceService {
       const evidence = this.getEvidenceById(evidenceId)
       if (evidence)
       {
-        const index = this.includedEvidence.indexOf(evidence);
+        const index = this._includedEvidence.indexOf(evidence);
         if (index >= 0)
         {
-          this.ghostIncludedEvidence.splice(index, 1)
-          this.includedEvidenceSubject.next(this.ghostIncludedEvidence)
+          this._ghostIncludedEvidence.splice(index, 1)
+          this.includedEvidenceSubject.next(this._ghostIncludedEvidence)
         }
       }
       else
@@ -141,8 +154,8 @@ export class EvidenceService {
 
   clearGhostIncludedEvidence()
   {
-    this.ghostIncludedEvidence = []
-    this.ghostIncludedEvidenceSubject.next(this.ghostIncludedEvidence);
+    this._ghostIncludedEvidence = []
+    this.ghostIncludedEvidenceSubject.next(this._ghostIncludedEvidence);
   }
 
   addGhostExcludedEvidences(evidences: string[])
@@ -153,10 +166,15 @@ export class EvidenceService {
 
       if (evidence)
       {
-        if(!this.ghostExcludedEvidence.includes(evidence))
+        if(evidence.id =='emf')
         {
-          this.ghostExcludedEvidence.push(evidence);
-          this.ghostExcludedEvidenceSubject.next(this.ghostExcludedEvidence);
+          console.log('should be excluding emf');
+        }
+
+        if(!this._ghostExcludedEvidence.some(ev => ev.id == evidence.id))
+        {
+          this._ghostExcludedEvidence.push(evidence);
+          this.ghostExcludedEvidenceSubject.next(this._ghostExcludedEvidence);
         }
       }
       else {
@@ -169,12 +187,14 @@ export class EvidenceService {
   {
     evidences.forEach(evidenceId => {
       const evidence = this.getEvidenceById(evidenceId);
-
       if (evidence)
       {
-        const index = this.ghostExcludedEvidence.indexOf(evidence);
-        this.ghostExcludedEvidence.splice(index, 1);
-        this.ghostExcludedEvidenceSubject.next(this.ghostExcludedEvidence);
+        const index = this._ghostExcludedEvidence.indexOf(evidence);
+        if (index >= 0)
+        {
+          this._ghostExcludedEvidence.splice(index, 1);
+          this.ghostExcludedEvidenceSubject.next(this._ghostExcludedEvidence);
+        }
       } else {
         console.warn('tried to remove ghost excluded evidence by id:', evidenceId);
       }
@@ -183,51 +203,56 @@ export class EvidenceService {
 
   clearGhostExcludedEvidences()
   {
-    this.ghostExcludedEvidence = [];
-    this.ghostExcludedEvidenceSubject.next(this.ghostExcludedEvidence);
+    this._ghostExcludedEvidence = [];
+    this.ghostExcludedEvidenceSubject.next(this._ghostExcludedEvidence);
   }
 
   addExcludedEvidence(evidence: Evidence)
   {
-    if (!this.excludedEvidence.includes(evidence))
+    if (!this._excludedEvidence.some(ev => ev.id == evidence.id))
     {
-      this.excludedEvidence.push(evidence)
-      this.excludedEvidenceSubject.next(this.excludedEvidence);
+      this._excludedEvidence.push(evidence)
+      this.excludedEvidenceSubject.next(this._excludedEvidence);
     }
   }
 
   removeExcludedEvidence(evidence: Evidence)
   {
-    const index = this.excludedEvidence.indexOf(evidence);
+    const index = this._excludedEvidence.indexOf(evidence);
     if (index >= 0)
     {
-      this.excludedEvidence.splice(index);
-      this.excludedEvidenceSubject.next(this.excludedEvidence);
+      this._excludedEvidence.splice(index, 1);
+      this.excludedEvidenceSubject.next(this._excludedEvidence);
     }
   }
 
   clearExcludedEvidence() {
-    this.excludedEvidence = [];
-    this.excludedEvidenceSubject.next(this.excludedEvidence);
+    this._excludedEvidence = [];
+    this.excludedEvidenceSubject.next(this._excludedEvidence);
   }
 
   isEvidenceGhostIncluded(evidence: Evidence): boolean
   {
-    return this.ghostIncludedEvidence.includes(evidence);
+    return this._ghostIncludedEvidence.some(ev => ev.id == evidence.id);
+  }
+
+  isEvidenceGhostExcluded(evidence: Evidence): boolean
+  {
+    return this._ghostExcludedEvidence.some(ev => ev.id == evidence.id);
   }
 
   isEvidenceIncluded(evidence: Evidence): boolean
   {
-    return this.includedEvidence.includes(evidence);
+    return this._includedEvidence.some(ev => ev.id == evidence.id);
   }
 
   isEvidenceDisproved(evidence: Evidence): boolean
   {
-    return this.excludedEvidence.includes(evidence);
+    return this._excludedEvidence.some(ev => ev.id == evidence.id);
   }
 
   isEvidenceExcluded(evidence: Evidence): boolean
   {
-    return this.ghostExcludedEvidence.includes(evidence);
+    return this._ghostExcludedEvidence.some(ev => ev.id == evidence.id);
   }
 }

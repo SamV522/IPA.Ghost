@@ -59,3 +59,9 @@ div.flex-column-container {
     flex-grow: 1;
     height: 100%;
 }
+
+.primary-evidence-container {
+    width: 280px;
+    padding: 10px 0px 5px 0px;
+    margin: auto;
+}
