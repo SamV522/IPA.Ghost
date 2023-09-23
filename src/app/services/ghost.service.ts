@@ -176,6 +176,7 @@ export class GhostService {
 
   clearAllGhosts()
   {
+    this.selectGhost(undefined);
     this.clearDisprovedGhosts();
     this.clearExcludedGhosts();
   }
