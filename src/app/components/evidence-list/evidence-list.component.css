@@ -12,7 +12,7 @@
 .evidence-item {
   display: flex;
   align-items: center;
-  height: 20px;
+  height: 15px;
   padding: 5px 5px 5px 5px;
   overflow: none;
   user-select: none;

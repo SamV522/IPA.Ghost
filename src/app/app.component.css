@@ -56,8 +56,12 @@ div.flex-column-container {
     height: 100%;
 }
 
-.primary-evidence-container {
+.primary-evidence {
     width: 280px;
     padding: 10px 0px 5px 0px;
     margin: auto;
+}
+
+.secondary-evidence {    
+    font-size: 14px;
 }
