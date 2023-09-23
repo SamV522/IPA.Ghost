@@ -36,6 +36,10 @@ export class SecondaryEvidenceListComponent {
     return this.evidenceService.isEvidenceGhostIncluded(evidence);
   }
 
+  isEvidenceIncluded(evidence: Evidence): boolean {
+    return this.evidenceService.isEvidenceIncluded(evidence);
+  }
+
   isEvidenceDisproved(evidence: Evidence)
   {
     return this.evidenceService.isEvidenceDisproved(evidence)

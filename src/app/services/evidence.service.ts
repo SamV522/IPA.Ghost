@@ -216,6 +216,11 @@ export class EvidenceService {
     return this.ghostIncludedEvidence.includes(evidence);
   }
 
+  isEvidenceIncluded(evidence: Evidence): boolean
+  {
+    return this.includedEvidence.includes(evidence);
+  }
+
   isEvidenceDisproved(evidence: Evidence): boolean
   {
     return this.excludedEvidence.includes(evidence);

@@ -41,6 +41,11 @@ export class PrimaryEvidenceListComponent {
     return this.evidenceService.isEvidenceDisproved(evidence)
   }
 
+  isEvidenceIncluded(evidence: Evidence): boolean
+  {
+    return this.evidenceService.isEvidenceIncluded(evidence);
+  }
+
   isEvidenceExcluded(evidence: Evidence)
   {
     return this.evidenceService.isEvidenceExcluded(evidence)
