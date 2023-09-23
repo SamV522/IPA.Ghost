@@ -107,7 +107,7 @@
         "id": "cantturnlightson"
     },
     {
-        "name": "Hunt Speed 1.1x/0.9x",
+        "name": "Hunt Speed 1.53/1.87 m/s",
         "id": "twinspeed"
     },
     {
@@ -169,5 +169,49 @@
     {
         "name": "Exit Closed w/o Event/Hunt",
         "id": "yureislam"
+    },
+    {
+        "name": "Can't Hunt Far",
+        "id": "spirithunt"
+    },
+    {
+        "name": "Long Smudge Hunt C/D 3min",
+        "id": "spiritsmudge"
+    },
+    {
+        "name": "More active around people",
+        "id": "extrovertoni"
+    },
+    {
+        "name": "Fast",
+        "id": "fastboi"
+    },
+    {
+        "name": "Slow",
+        "id": "slowboi"
+    },
+    {
+        "name": "Long Smudge Blindness (7.5s)",
+        "id": "moroismudge"
+    },
+    {
+        "name": "Short Smudge Hunt C/D <90s",
+        "id": "demonsmudge"
+    },
+    {
+        "name": "Fast When > 3m away",
+        "id": "jinnspeed"
+    },
+    {
+        "name": "Boring",
+        "id": "shadeboring"
+    },
+    {
+        "name": "Slows Down with Age/Time",
+        "id": "oldmanthaye"
+    },
+    {
+        "name": "Doesn't Speed Up w/LOS",
+        "id": "nolosspeed"
     }
 ]
