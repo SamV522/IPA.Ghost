@@ -169,5 +169,33 @@
     {
         "name": "Exit Closed w/o Event/Hunt",
         "id": "yureislam"
+    },
+    {
+        "name": "Can't Hunt Far",
+        "id": "spirithunt"
+    },
+    {
+        "name": "Long Smudge Hunt C/D 3min",
+        "id": "spiritsmudge"
+    },
+    {
+        "name": "More active around people",
+        "id": "extrovertoni"
+    },
+    {
+        "name": "Fast",
+        "id": "fastboi"
+    },
+    {
+        "name": "Slow",
+        "id": "slowboi"
+    },
+    {
+        "name": "Long Smudge Blindness (7.5s)",
+        "id": "moroismudge"
+    },
+    {
+        "name": "Short Smudge Hunt C/D <90s",
+        "id": "demonsmudge"
     }
 ]

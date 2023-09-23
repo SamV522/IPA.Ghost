@@ -14,7 +14,9 @@
         "evidence": [
             "emf",
             "spiritbox",
-            "ghostwriting"
+            "ghostwriting",
+            "spirithunt",
+            "spiritsmudge"
         ]
     },
     {
@@ -72,7 +74,8 @@
             "freezing",
             "fingies",
             "ghostwriting",
-            "demonhunts"
+            "demonhunts",
+            "demonsmudge"
         ]
     },
     {
@@ -149,7 +152,9 @@
             "freezing",
             "ghostwriting",
             "moroicurse",
-            "lowsanityspeed"
+            "lowsanityspeed",
+            "fastboi",
+            "moroismudge"
         ]
     },
     {
@@ -209,7 +214,9 @@
             "freezing",
             "ghostwriting",
             "slowsdowninsearcharea",
-            "speedboostwhendetecting"
+            "speedboostwhendetecting",
+            "fastboi",
+            "slowboi"
         ]
     },
     {
@@ -247,7 +254,8 @@
             "ghostorbs",
             "freezing",
             "fingies",
-            "hantubreath"
+            "hantubreath",
+            "slowboi"
         ]
     },
     {
@@ -307,7 +315,9 @@
             "dots",
             "slowwhenclose",
             "fastwhenfar",
-            "heavybreathing"
+            "heavybreathing",
+            "slowboi",
+            "fastboi"
         ]
     },
     {
@@ -385,7 +395,8 @@
             "freezing",
             "dots",
             "cantairball",
-            "blinkmostlyon"
+            "blinkmostlyon",
+            "extrovertoni"
         ]
     },
     {
@@ -463,7 +474,8 @@
         "evidence": [
             "ghostorbs",
             "ghostwriting",
-            "dots"
+            "dots",
+            "fastboi"
         ]
     }
 ]
