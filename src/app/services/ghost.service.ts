@@ -27,6 +27,11 @@ export class GhostService {
   private disprovedGhostsSubject = new Subject<Ghost[]>
   public onDisprovedGhostsUpdated$ = this.disprovedGhostsSubject.asObservable();
 
+  get remainingGhosts() {
+     return this.ghosts
+      .filter(ghost => !this.disprovedGhosts.some(disproved => disproved.name == ghost.name))
+      .filter(ghost => !this.excludedGhosts.some(excluded => excluded.name == ghost.name));
+  }
 
   constructor(private httpClient: HttpClient, private evidenceService: EvidenceService) 
   {
@@ -50,6 +55,16 @@ export class GhostService {
         .filter( ghost => !included.every(evidence => ghost.evidence.includes(evidence.id))) // That don't have ALL the included evidence
         .forEach( ghost => this.addDisprovedGhost(ghost));
     });
+  }
+
+  getEvidenceInCommon(ghosts: Ghost[] = this.remainingGhosts) {
+    let commonEvidence = ghosts.flatMap(ghost => ghost.evidence);
+    
+    this.remainingGhosts.forEach(ghost => {
+      commonEvidence = commonEvidence.filter(evidence => ghost.evidence.includes(evidence))
+    });
+
+    return commonEvidence;
   }
 
   isSelectedGhost(ghost: Ghost) {

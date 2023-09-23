@@ -6,6 +6,7 @@
       [class.included]="isEvidenceGhostIncluded(evidence)"
       [class.disproved]="isEvidenceDisproved(evidence)"
       [class.excluded]="isEvidenceExcluded(evidence)"
+      [class.common]="isEvidenceInCommon(evidence) && !isEvidenceIncluded(evidence)"
     >
       {{ evidence.name }}
     </div>

@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { EvidenceService } from '../../services/evidence.service';
 import { Evidence } from '../../models/evidence.model';
 import { Observable } from 'rxjs';
+import { GhostService } from 'src/app/services/ghost.service';
 
 @Component({
   selector: 'app-evidence-list',
@@ -16,7 +17,7 @@ export class EvidenceListComponent {
 
   evidenceList: any[] = [];
 
-  constructor(private evidenceService: EvidenceService  ) {}
+  constructor(private evidenceService: EvidenceService, private ghostService: GhostService  ) {}
 
   ngOnInit() {
     this.evidence.subscribe((data) => {
@@ -59,6 +60,11 @@ export class EvidenceListComponent {
   isEvidenceExcluded(evidence: Evidence)
   {
     return this.evidenceService.isEvidenceDisproved(evidence) || this.evidenceService.isEvidenceGhostExcluded(evidence);
+  }
+
+  isEvidenceInCommon(evidence: Evidence)
+  {
+    return this.ghostService.getEvidenceInCommon().includes(evidence.id)
   }
 
   evidenceClicked(evidence: Evidence)
