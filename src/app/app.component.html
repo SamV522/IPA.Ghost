@@ -15,7 +15,7 @@
       <div class="book-container">
         <div class="flex-row-container">
           <div class="flex-column-container">
-            <div class="left-page">
+            <div class="page left-page">
               <div class="page-header">Primary Evidence</div>
               <!-- primary evidence -->
               <app-evidence-list class="primary-evidence-container" [evidence]="this.evidenceService.getPrimaryEvidence()"></app-evidence-list>
@@ -26,7 +26,7 @@
             </div>
           </div>
           <div class="flex-column-container">
-            <div class="right-page">
+            <div class="page right-page">
               <div class="page-header">Secondary Evidence</div>
               <!-- evidence -->
               <app-evidence-list [evidence]="this.evidenceService.getSecondaryEvidence()" [alphabeticalSort]="true"></app-evidence-list>
