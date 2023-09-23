@@ -255,7 +255,8 @@
             "freezing",
             "fingies",
             "hantubreath",
-            "slowboi"
+            "slowboi",
+            "nolosspeed"
         ]
     },
     {
@@ -356,7 +357,8 @@
             "freezing",
             "fingies",
             "cantturnoffbreaker",
-            "losspeedboost"
+            "losspeedboost",
+            "jinnspeed"
         ]
     },
     {
@@ -375,7 +377,8 @@
             "emf",
             "freezing",
             "ghostwriting",
-            "nohuntsnearpeople"
+            "nohuntsnearpeople",
+            "shadeboring"
         ]
     },
     {
@@ -475,7 +478,9 @@
             "ghostorbs",
             "ghostwriting",
             "dots",
-            "fastboi"
+            "fastboi",
+            "oldmanthaye",
+            "nolosspeed"
         ]
     }
 ]
