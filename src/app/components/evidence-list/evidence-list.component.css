@@ -1,3 +1,11 @@
+.wrapper {
+  height: 420px;
+  width: 400px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  scroll-padding-right: 20px;
+}
+
 .evidence-container {
   display: flex;
   flex-direction: row;
@@ -12,7 +20,7 @@
 .evidence-item {
   display: flex;
   align-items: center;
-  height: 15px;
+  height: 20px;
   padding: 5px 5px 5px 5px;
   overflow: none;
   user-select: none;
