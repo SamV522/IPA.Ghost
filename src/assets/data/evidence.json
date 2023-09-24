@@ -2,216 +2,380 @@
     {
         "primary": true,
         "name": "EMF 5",
-        "id": "emf"
+        "id": "emf",
+        "categories": [
+            ""
+        ]
     },
     {
         "primary": true,
         "name": "Ultraviolet",
-        "id": "fingies"
+        "id": "fingies",
+        "categories": [
+            ""
+        ]
     },
     {
         "primary": true,
         "name": "Ghost Writing",
-        "id": "ghostwriting"
+        "id": "ghostwriting",
+        "categories": [
+            ""
+        ]
     },
     {
         "primary": true,
         "name": "Freezing Temps",
-        "id": "freezing"
+        "id": "freezing",
+        "categories": [
+            ""
+        ]
     },
     {
         "primary": true,
         "name": "D.O.T.S. Projector",
-        "id": "dots"
+        "id": "dots",
+        "categories": [
+            ""
+        ]
     },
     {
         "primary": true,
         "name": "Ghost Orbs",
-        "id": "ghostorbs"
+        "id": "ghostorbs",
+        "categories": [
+            ""
+        ]
     },
     {
         "primary": true,
         "name": "Spirit Box",
-        "id": "spiritbox"
+        "id": "spiritbox",
+        "categories": [
+            ""
+        ]
     },
     {
         "name": "Blinking Mostly On",
-        "id": "blinkmostlyon"
+        "id": "blinkmostlyon",
+        "categories": [
+            "blinking"
+        ]
     },
     {
         "name": "Blinking Mostly Off",
-        "id": "blinkmostlyoff"
+        "id": "blinkmostlyoff",
+        "categories": [
+            ""
+        ]
     },
     {
         "name": "Quiet while hunting",
-        "id": "quiethunting"
+        "id": "quiethunting",
+        "categories": [
+            "blinking"
+        ]
     },
     {
         "name": "Can't Roam Far",
-        "id": "cantroam"
+        "id": "cantroam",
+        "categories": [
+            "traits"
+        ]
     },
     {
         "name": "Can't Change Room",
-        "id": "noroomchange"
+        "id": "noroomchange",
+        "categories": [
+            "traits"
+        ]
     },
     {
         "name": "Can't Turn Off Breaker",
-        "id": "cantturnoffbreaker"
+        "id": "cantturnoffbreaker",
+        "categories": [
+            "traits"
+        ]
     },
     {
         "name": "Orbs on 0 Evidence",
-        "id": "ghostorbson0evidence"
+        "id": "ghostorbson0evidence",
+        "categories": [
+            "equipment"
+        ]
     },
     {
         "name": "Detection Radius <2.5m",
-        "id": "smalldetection"
+        "id": "smalldetection",
+        "categories": [
+            "hunt"
+        ]
     },
     {
         "name": "Can't Change Target",
-        "id": "cantchangetarget"
+        "id": "cantchangetarget",
+        "categories": [
+            "hunt"
+        ]
     },
     {
         "name": "Spirit Box Breathing",
-        "id": "heavybreathing"
+        "id": "heavybreathing",
+        "categories": [
+            "equipment"
+        ]
     },
     {
         "name": "Really slow when close",
-        "id": "slowwhenclose"
+        "id": "slowwhenclose",
+        "categories": [
+            "hunt"
+        ]
     },
     {
         "name": "Really fast when far away",
-        "id": "fastwhenfar"
+        "id": "fastwhenfar",
+        "categories": [
+            "hunt"
+        ]
     },
     {
         "name": "Can't Airball Event",
-        "id": "cantairball"
+        "id": "cantairball",
+        "categories": [
+            "traits"
+        ]
     },
     {
         "name": "Firelight Hunt",
-        "id": "firelighthunt"
+        "id": "firelighthunt",
+        "categories": [
+            "hunt"
+        ]
     },
     {
         "name": "Has No Footprints",
-        "id": "nofootprints"
+        "id": "nofootprints",
+        "categories": [
+            "traits"
+        ]
     },
     {
         "name": "More than 5 Fingers",
-        "id": "obakefingers"
+        "id": "obakefingers",
+        "categories": [
+            "traits"
+        ]
     },
     {
         "name": "Banshee Screem ParaMic",
-        "id": "bansheescream"
+        "id": "bansheescream",
+        "categories": [
+            "equipment"
+        ]
     },
     {
         "name": "Can't Turn Lights On",
-        "id": "cantturnlightson"
+        "id": "cantturnlightson",
+        "categories": [
+            "traits"
+        ]
     },
     {
         "name": "Hunt Speed 1.53/1.87 m/s",
-        "id": "twinspeed"
+        "id": "twinspeed",
+        "categories": [
+            "hunt"
+        ]
     },
     {
         "name": "Threw Multiple Objects",
-        "id": "throwmultiple"
+        "id": "throwmultiple",
+        "categories": [
+            "traits",
+            "hunt"
+        ]
     },
     {
         "name": "Spirit Box/ParaMic Curse",
-        "id": "moroicurse"
+        "id": "moroicurse",
+        "categories": [
+            "traits"
+        ]
     },
     {
         "name": "Speed Changed by Sanity",
-        "id": "lowsanityspeed"
+        "id": "lowsanityspeed",
+        "categories": [
+            "hunt"
+        ]
     },
     {
         "name": "Slows When Searching",
-        "id": "slowsdowninsearcharea"
+        "id": "slowsdowninsearcharea",
+        "categories": [
+            "hunt"
+        ]
     },
     {
         "name": "Detection Speed Boost",
-        "id": "speedboostwhendetecting"
+        "id": "speedboostwhendetecting",
+        "categories": [
+            "hunt"
+        ]
     },
     {
         "name": "Hunt Cooldown < 25s",
-        "id": "demonhunts"
+        "id": "demonhunts",
+        "categories": [
+            "hunt"
+        ]
     },
     {
         "name": "Faster Near Electronics",
-        "id": "fasternearelectronics"
+        "id": "fasternearelectronics",
+        "categories": [
+            "hunt"
+        ]
     },
     {
         "name": "Line of Sight Speed Boost",
-        "id": "losspeedboost"
+        "id": "losspeedboost",
+        "categories": [
+            "hunt"
+        ]
     },
     {
         "name": "No Hunts Near People",
-        "id": "nohuntsnearpeople"
+        "id": "nohuntsnearpeople",
+        "categories": [
+            "hunt",
+            "traits"
+        ]
     },
     {
         "name": "Light Turned Back Off",
-        "id": "turnlightsbackoff"
+        "id": "turnlightsbackoff",
+        "categories": [
+            "traits"
+        ]
     },
     {
         "name": "Prefers Singing Events",
-        "id": "preferssingingevents"
+        "id": "preferssingingevents",
+        "categories": [
+            "traits"
+        ]
     },
     {
         "name": "Cold Breath Hunting",
-        "id": "hantubreath"
+        "id": "hantubreath",
+        "categories": [
+            "hunt"
+        ]
     },
     {
         "name": "Shapeshift During Hunt",
-        "id": "shapeshifter"
+        "id": "shapeshifter",
+        "categories": [
+            "hunt"
+        ]
     },
     {
         "name": "D.O.T.S. On Video Only",
-        "id": "goryodots"
+        "id": "goryodots",
+        "categories": [
+            "equipment"
+        ]
     },
     {
         "name": "Exit Closed w/o Event/Hunt",
-        "id": "yureislam"
+        "id": "yureislam",
+        "categories": [
+            "traits"
+        ]
     },
     {
         "name": "Can't Hunt Far",
-        "id": "spirithunt"
+        "id": "spirithunt",
+        "categories": [
+            "hunt"
+        ]
     },
     {
         "name": "Long Smudge Hunt C/D 3min",
-        "id": "spiritsmudge"
+        "id": "spiritsmudge",
+        "categories": [
+            "smudge",
+            "equipment"
+        ]
     },
     {
         "name": "More active around people",
-        "id": "extrovertoni"
+        "id": "extrovertoni",
+        "categories": [
+            "traits"
+        ]
     },
     {
         "name": "Fast",
-        "id": "fastboi"
+        "id": "fastboi",
+        "categories": [
+            "speed",
+            "hunt"
+        ]
     },
     {
         "name": "Slow",
-        "id": "slowboi"
+        "id": "slowboi",
+        "categories": [
+            "speed",
+            "hunt"
+        ]
     },
     {
         "name": "Long Smudge Blindness (7.5s)",
-        "id": "moroismudge"
+        "id": "moroismudge",
+        "categories": [
+            "smudge",
+            "equipment"
+        ]
     },
     {
         "name": "Short Smudge Hunt C/D <90s",
-        "id": "demonsmudge"
+        "id": "demonsmudge",
+        "categories": [
+            "smudge",
+            "equipment"
+        ]
     },
     {
         "name": "Fast When > 3m away",
-        "id": "jinnspeed"
+        "id": "jinnspeed",
+        "categories": [
+            "hunt",
+            "speed"
+        ]
     },
     {
         "name": "Boring",
-        "id": "shadeboring"
+        "id": "shadeboring",
+        "categories": [
+            "traits"
+        ]
     },
     {
         "name": "Slows Down with Age/Time",
-        "id": "oldmanthaye"
+        "id": "oldmanthaye",
+        "categories": [
+            "hunt"
+        ]
     },
     {
         "name": "Doesn't Speed Up w/LOS",
-        "id": "nolosspeed"
+        "id": "nolosspeed",
+        "categories": [
+            "hunt"
+        ]
     }
 ]

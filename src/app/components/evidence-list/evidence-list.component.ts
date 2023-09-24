@@ -13,9 +13,10 @@ export class EvidenceListComponent {
 
   @Input() evidence!: Observable<Evidence[]>;
   @Input() alphabeticalSort: boolean = false;
-  @Input() columns: any = [[], []]
+  @Input() columns: number = 2
+  @Input() categorize: boolean = false;
 
-  evidenceList: any[] = [];
+  evidenceList: Evidence[] = [];
 
   constructor(private evidenceService: EvidenceService, private ghostService: GhostService  ) {}
 
@@ -26,16 +27,22 @@ export class EvidenceListComponent {
         this.evidenceList = data.sort((a, b) => a.name.localeCompare(b.name));
       else
         this.evidenceList = data;
-  
-      // Calculate how many evidence per column
-      const evidencePerColumn = Math.ceil(this.evidenceList.length / this.columns.length);
-      
-      // Distribute evidence into columns
-      for (let i = 0; i < this.columns.length; i++) {
-        this.columns[i] = this.evidenceList.slice(i * evidencePerColumn, (i + 1) * evidencePerColumn);
-      }
 
     });
+  }
+
+  splitEvidenceIntoColumns(evidence: Evidence[]): Evidence[][] {
+    let columns: Evidence[][] = [[], []]
+
+    // Calculate how many evidence per column
+    const evidencePerColumn = Math.ceil(evidence.length / columns.length);
+    
+    // Distribute evidence into columns
+    for (let i = 0; i < this.columns; i++) {
+      columns[i] = evidence.slice(i * evidencePerColumn, (i + 1) * evidencePerColumn);
+    }
+
+    return columns;
   }
 
   isEvidenceGhostIncluded(evidence: Evidence): boolean

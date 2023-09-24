@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Observable, Subject, map, of } from 'rxjs';
+import { Observable, Subject, forkJoin, map, of } from 'rxjs';
 import { Evidence } from '../models/evidence.model';
 import { HttpClient } from '@angular/common/http';
+import { EvidenceCategory } from '../models/evidence-category.model';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +11,7 @@ export class EvidenceService {
 
   private evidenceLoaded = false;
 
+  private _categories: EvidenceCategory[] = [];
   private _evidence: Evidence[] = [];
   private evidenceSubject = new Subject<Evidence[]>();
   public onEvidenceUpdated$ = this.evidenceSubject.asObservable();
@@ -76,12 +78,21 @@ export class EvidenceService {
   }
 
   refreshEvidence(): Observable<Evidence[]> {
-    return this.httpClient.get<Evidence[]>('./assets/data/evidence.json').pipe(map(data => {
-      this._evidence = data;
-      this.evidenceSubject.next(this._evidence);
+    return forkJoin([
+      this.httpClient.get<Evidence[]>('./assets/data/evidence.json'),
+      this.httpClient.get<EvidenceCategory[]>('./assets/data/evidence-categories.json')
+    ]).pipe(
+      map(([evidenceData, categoriesData]) => {
+        this._evidence = evidenceData;
+        this._categories = categoriesData;
+        return evidenceData;
+      })
+    );
+  }
 
-      return data;
-    }));
+  getEvidenceByCategoryKey(key: string): Evidence[] {
+    const categoryEvidence = this._evidence.filter(evidence => evidence.categories.includes(key))
+    return categoryEvidence;
   }
 
   addIncludedEvidence(evidence: Evidence)

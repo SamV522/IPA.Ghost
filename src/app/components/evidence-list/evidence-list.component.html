@@ -1,5 +1,6 @@
+
 <div class="evidence-container">
-  <div class="evidence-column" *ngFor="let column of columns">
+  <div class="evidence-column" *ngFor="let column of this.splitEvidenceIntoColumns(this.evidenceList);">
     <div class="evidence-item" *ngFor="let evidence of column"
       (click)="evidenceClicked(evidence)"
       [class.proved]="isEvidenceIncluded(evidence)"
