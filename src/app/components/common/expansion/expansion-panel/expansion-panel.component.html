@@ -1,0 +1,12 @@
+<div class="expansion-panel">
+    <div class="panel-header" (click)="togglePanel()">
+        <ng-content select="app-expansion-panel-header"></ng-content>
+        <hr class="line">
+        <span class="material-symbols-outlined">
+            {{ expanded ? 'expand_less' : 'expand_more' }}
+        </span>
+    </div>
+    <div class="panel-content" *ngIf="expanded">
+        <ng-content></ng-content>
+    </div>
+</div>

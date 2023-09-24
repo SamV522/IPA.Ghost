@@ -1,15 +1,40 @@
-
-<div class="evidence-container">
-  <div class="evidence-column" *ngFor="let column of this.splitEvidenceIntoColumns(this.evidenceList);">
-    <div class="evidence-item" *ngFor="let evidence of column"
-      (click)="evidenceClicked(evidence)"
-      [class.proved]="isEvidenceIncluded(evidence)"
-      [class.included]="isEvidenceGhostIncluded(evidence)"
-      [class.disproved]="isEvidenceDisproved(evidence)"
-      [class.excluded]="isEvidenceExcluded(evidence)"
-      [class.common]="isEvidenceInCommon(evidence) && !isEvidenceIncluded(evidence)"
-    >
-      {{ evidence.name }}
+<ng-container *ngIf="categorize; else uncategorized">
+  <div class="wrapper">
+    <app-expansion-panel *ngFor="let category of this.evidenceService.categories">
+      <app-expansion-panel-header>
+        {{category.name}} ({{this.evidenceService.getEvidenceByCategoryKey(category.key).length}})
+      </app-expansion-panel-header>
+      <div class="evidence-container">
+        <div class="evidence-column" *ngFor="let column of this.splitEvidenceIntoColumns(this.evidenceService.getEvidenceByCategoryKey(category.key));">
+            <div class="evidence-item" *ngFor="let evidence of column"
+              (click)="evidenceClicked(evidence)"
+              [class.proved]="isEvidenceIncluded(evidence)"
+              [class.included]="isEvidenceGhostIncluded(evidence)"
+              [class.disproved]="isEvidenceDisproved(evidence)"
+              [class.excluded]="isEvidenceExcluded(evidence)"
+              [class.common]="isEvidenceInCommon(evidence) && !isEvidenceIncluded(evidence)"
+            >
+              {{ evidence.name }}
+            </div>
+          </div>
+      </div>
+    </app-expansion-panel>
+  </div>
+</ng-container>
+  
+<ng-template #uncategorized>
+  <div class="evidence-container">
+    <div class="evidence-column" *ngFor="let column of this.splitEvidenceIntoColumns(this.evidenceList);">
+      <div class="evidence-item" *ngFor="let evidence of column"
+        (click)="evidenceClicked(evidence)"
+        [class.proved]="isEvidenceIncluded(evidence)"
+        [class.included]="isEvidenceGhostIncluded(evidence)"
+        [class.disproved]="isEvidenceDisproved(evidence)"
+        [class.excluded]="isEvidenceExcluded(evidence)"
+        [class.common]="isEvidenceInCommon(evidence) && !isEvidenceIncluded(evidence)"
+      >
+        {{ evidence.name }}
+      </div>
     </div>
   </div>
-</div>
+</ng-template>

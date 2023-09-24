@@ -7,12 +7,18 @@ import { AppComponent } from './app.component';
 import { GhostListComponent } from './components/ghost-list/ghost-list.component';
 import { EvidenceListComponent } from './components/evidence-list/evidence-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ExpansionPanelComponent } from './components/common/expansion/expansion-panel/expansion-panel.component';
+import { ExpansionPanelHeaderComponent } from './components/common/expansion/expansion-panel-header/expansion-panel-header.component';
+import { AccordionComponent } from './components/common/expansion/accordion/accordion.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GhostListComponent,
-    EvidenceListComponent
+    EvidenceListComponent,
+    ExpansionPanelComponent,
+    ExpansionPanelHeaderComponent,
+    AccordionComponent
   ],
   imports: [
     BrowserModule,

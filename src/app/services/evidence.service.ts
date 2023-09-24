@@ -35,6 +35,8 @@ export class EvidenceService {
   constructor(private httpClient: HttpClient) {
   }
 
+  get categories() { return this._categories; }
+
   get evidence() { 
     return { 
       included: this._includedEvidence, 
@@ -91,7 +93,7 @@ export class EvidenceService {
   }
 
   getEvidenceByCategoryKey(key: string): Evidence[] {
-    const categoryEvidence = this._evidence.filter(evidence => evidence.categories.includes(key))
+    const categoryEvidence = this._evidence.filter(evidence => evidence.categories.includes(key) || key == 'all')
     return categoryEvidence;
   }
 
@@ -176,18 +178,11 @@ export class EvidenceService {
       const evidence = this.getEvidenceById(evidenceId);
 
       if (evidence)
-      {
-        if(evidence.id =='emf')
-        {
-          console.log('should be excluding emf');
-        }
-
         if(!this._ghostExcludedEvidence.some(ev => ev.id == evidence.id))
         {
           this._ghostExcludedEvidence.push(evidence);
           this.ghostExcludedEvidenceSubject.next(this._ghostExcludedEvidence);
         }
-      }
       else {
         console.warn('tried to add ghost excluded evidence by id:', evidenceId);
       }

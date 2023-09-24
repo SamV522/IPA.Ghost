@@ -18,7 +18,7 @@ export class EvidenceListComponent {
 
   evidenceList: Evidence[] = [];
 
-  constructor(private evidenceService: EvidenceService, private ghostService: GhostService  ) {}
+  constructor(public evidenceService: EvidenceService, private ghostService: GhostService  ) {}
 
   ngOnInit() {
     this.evidence.subscribe((data) => {
