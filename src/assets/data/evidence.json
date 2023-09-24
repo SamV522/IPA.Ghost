@@ -66,14 +66,14 @@
         "name": "Blinking Mostly Off",
         "id": "blinkmostlyoff",
         "categories": [
-            ""
+            "blinking"
         ]
     },
     {
         "name": "Quiet while hunting",
         "id": "quiethunting",
         "categories": [
-            "blinking"
+            "hunt"
         ]
     },
     {
@@ -129,14 +129,16 @@
         "name": "Really slow when close",
         "id": "slowwhenclose",
         "categories": [
-            "hunt"
+            "hunt",
+            "speed"
         ]
     },
     {
         "name": "Really fast when far away",
         "id": "fastwhenfar",
         "categories": [
-            "hunt"
+            "hunt",
+            "speed"
         ]
     },
     {
@@ -214,7 +216,8 @@
         "name": "Slows When Searching",
         "id": "slowsdowninsearcharea",
         "categories": [
-            "hunt"
+            "hunt",
+            "speed"
         ]
     },
     {

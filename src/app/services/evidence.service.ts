@@ -92,8 +92,10 @@ export class EvidenceService {
     );
   }
 
-  getEvidenceByCategoryKey(key: string): Evidence[] {
-    const categoryEvidence = this._evidence.filter(evidence => evidence.categories.includes(key) || key == 'all')
+  getEvidenceByCategoryKey(key: string, includePrimary: boolean = false): Evidence[] {
+    const categoryEvidence = this._evidence
+        .filter(evidence => evidence.categories.includes(key) || key == 'all')
+        .filter((evidence) => includePrimary || !evidence.primary);
     return categoryEvidence;
   }
 

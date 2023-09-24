@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-expansion-panel',
@@ -7,7 +7,8 @@ import { Component } from '@angular/core';
   host: { 'style': 'display: flex; flex-direction: column; width:100%;'}
 })
 export class ExpansionPanelComponent {
-  expanded = false;
+  @Input() public panelName: string = 'none';
+  @Input() public expanded: boolean = false;
 
   togglePanel() {
     this.expanded = !this.expanded;

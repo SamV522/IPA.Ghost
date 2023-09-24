@@ -1,0 +1,30 @@
+[
+    {
+        "key": "all",
+        "name": "All"
+    },
+    {
+        "key": "hunt",
+        "name": "Hunt"
+    },
+    {
+        "key": "blinking",
+        "name": "Blinking"
+    },
+    {
+        "key": "speed",
+        "name": "Speed"
+    },
+    {
+        "key": "smudge",
+        "name": "Smudge"
+    },
+    {
+        "key": "equipment",
+        "name": "Equipment Tests"
+    },
+    {
+        "key": "traits",
+        "name": "Unique Traits"
+    }
+]

@@ -1,6 +1,6 @@
 <ng-container *ngIf="categorize; else uncategorized">
-  <div class="wrapper">
-    <app-expansion-panel *ngFor="let category of this.evidenceService.categories">
+  <app-accordion active="all" class="wrapper">
+    <app-expansion-panel *ngFor="let category of this.evidenceService.categories" [panelName]="category.key">
       <app-expansion-panel-header>
         {{category.name}} ({{this.evidenceService.getEvidenceByCategoryKey(category.key).length}})
       </app-expansion-panel-header>
@@ -19,7 +19,7 @@
           </div>
       </div>
     </app-expansion-panel>
-  </div>
+  </app-accordion>
 </ng-container>
   
 <ng-template #uncategorized>
