@@ -37,18 +37,10 @@ export class EvidenceService {
 
   get categories() { return this._categories; }
 
-  get evidence() { 
-    return { 
-      included: this._includedEvidence, 
-      excluded: this._excludedEvidence,
-      ghostIncluded: this._ghostIncludedEvidence,
-      ghostExcluded: this._ghostExcludedEvidence
-    }
+  getRemainingEvidence() {
+    const remaining = this._evidence.filter(evidence => !this._ghostExcludedEvidence.some(ev => ev.id == evidence.id));
+    return remaining;
   }
-  get includedEvidence() { return this._includedEvidence; }
-  get excludedEvidence() { return this._excludedEvidence; }
-  get ghostIncludedEvidence() { return this._ghostIncludedEvidence; }
-  get ghostExcludedEvidence() { return this._ghostExcludedEvidence; }
 
   getEvidence(): Observable<Evidence[]> {
     if(this.evidenceLoaded)
@@ -95,7 +87,14 @@ export class EvidenceService {
   getEvidenceByCategoryKey(key: string, includePrimary: boolean = false): Evidence[] {
     const categoryEvidence = this._evidence
         .filter(evidence => evidence.categories.includes(key) || key == 'all')
-        .filter((evidence) => includePrimary || !evidence.primary);
+        .filter(evidence => includePrimary || !evidence.primary);
+    return categoryEvidence;
+  }
+
+  getRemainingEvidenceByCategoryKey(key: string, includePrimary: boolean = false): Evidence[] {
+    const categoryEvidence = this.getRemainingEvidence()
+        .filter(evidence => evidence.categories.includes(key) || key == 'all')
+        .filter(evidence => includePrimary || !evidence.primary);
     return categoryEvidence;
   }
 

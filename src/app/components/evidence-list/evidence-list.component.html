@@ -2,7 +2,7 @@
   <app-accordion active="all" class="wrapper">
     <app-expansion-panel *ngFor="let category of this.evidenceService.categories" [panelName]="category.key">
       <app-expansion-panel-header>
-        {{category.name}} ({{this.evidenceService.getEvidenceByCategoryKey(category.key).length}})
+        {{category.name}} ({{this.evidenceService.getRemainingEvidenceByCategoryKey(category.key).length}} / {{this.evidenceService.getEvidenceByCategoryKey(category.key).length}})
       </app-expansion-panel-header>
       <div class="evidence-container">
         <div class="evidence-column" *ngFor="let column of this.splitEvidenceIntoColumns(this.evidenceService.getEvidenceByCategoryKey(category.key));">
