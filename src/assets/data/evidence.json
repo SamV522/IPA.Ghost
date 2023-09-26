@@ -4,7 +4,7 @@
         "name": "EMF 5",
         "id": "emf",
         "categories": [
-            ""
+            
         ]
     },
     {
@@ -12,7 +12,7 @@
         "name": "Ultraviolet",
         "id": "fingies",
         "categories": [
-            ""
+            
         ]
     },
     {
@@ -20,7 +20,7 @@
         "name": "Ghost Writing",
         "id": "ghostwriting",
         "categories": [
-            ""
+            
         ]
     },
     {
@@ -28,7 +28,7 @@
         "name": "Freezing Temps",
         "id": "freezing",
         "categories": [
-            ""
+            
         ]
     },
     {
@@ -36,7 +36,7 @@
         "name": "D.O.T.S. Projector",
         "id": "dots",
         "categories": [
-            ""
+            
         ]
     },
     {
@@ -44,7 +44,7 @@
         "name": "Ghost Orbs",
         "id": "ghostorbs",
         "categories": [
-            ""
+            
         ]
     },
     {
@@ -52,7 +52,7 @@
         "name": "Spirit Box",
         "id": "spiritbox",
         "categories": [
-            ""
+            
         ]
     },
     {
@@ -156,14 +156,14 @@
         ]
     },
     {
-        "name": "Has No Footprints",
+        "name": "Can't Step In Salt",
         "id": "nofootprints",
         "categories": [
             "traits"
         ]
     },
     {
-        "name": "More than 5 Fingers",
+        "name": "6 Finger Ultraviolet",
         "id": "obakefingers",
         "categories": [
             "traits"
@@ -187,7 +187,8 @@
         "name": "Hunt Speed 1.53/1.87 m/s",
         "id": "twinspeed",
         "categories": [
-            "hunt"
+            "hunt",
+            "speed"
         ]
     },
     {
@@ -202,14 +203,16 @@
         "name": "Spirit Box/ParaMic Curse",
         "id": "moroicurse",
         "categories": [
-            "traits"
+            "traits",
+            "desperate"
         ]
     },
     {
         "name": "Speed Changed by Sanity",
         "id": "lowsanityspeed",
         "categories": [
-            "hunt"
+            "hunt",
+            "speed"
         ]
     },
     {
@@ -224,7 +227,8 @@
         "name": "Detection Speed Boost",
         "id": "speedboostwhendetecting",
         "categories": [
-            "hunt"
+            "hunt",
+            "speed"
         ]
     },
     {
@@ -238,14 +242,8 @@
         "name": "Faster Near Electronics",
         "id": "fasternearelectronics",
         "categories": [
-            "hunt"
-        ]
-    },
-    {
-        "name": "Line of Sight Speed Boost",
-        "id": "losspeedboost",
-        "categories": [
-            "hunt"
+            "hunt",
+            "speed"
         ]
     },
     {
@@ -260,14 +258,16 @@
         "name": "Light Turned Back Off",
         "id": "turnlightsbackoff",
         "categories": [
-            "traits"
+            "traits",
+            "desperate"
         ]
     },
     {
         "name": "Prefers Singing Events",
         "id": "preferssingingevents",
         "categories": [
-            "traits"
+            "traits",
+            "desperate"
         ]
     },
     {
@@ -296,13 +296,6 @@
         "id": "yureislam",
         "categories": [
             "traits"
-        ]
-    },
-    {
-        "name": "Can't Hunt Far",
-        "id": "spirithunt",
-        "categories": [
-            "hunt"
         ]
     },
     {
@@ -353,14 +346,6 @@
         ]
     },
     {
-        "name": "Fast When > 3m away",
-        "id": "jinnspeed",
-        "categories": [
-            "hunt",
-            "speed"
-        ]
-    },
-    {
         "name": "Boring",
         "id": "shadeboring",
         "categories": [
@@ -371,14 +356,40 @@
         "name": "Slows Down with Age/Time",
         "id": "oldmanthaye",
         "categories": [
-            "hunt"
+            "hunt",
+            "speed"
         ]
     },
     {
         "name": "Doesn't Speed Up w/LOS",
         "id": "nolosspeed",
         "categories": [
-            "hunt"
+            "hunt",
+            "speed"
+        ]
+    },
+    {
+        "name": "Prefers Shadow/Fog Appearances",
+        "id": "shyshade",
+        "categories": [
+            "traits",
+            "desperate"
+        ]
+    },
+    {
+        "name": "Door Double Taps",
+        "id": "yureidoubletap",
+        "categories": [
+            "traits"
+        ]
+    },
+    {
+        "name": "LOS Speed Boost w/Breaker On and >3m Away",
+        "id": "jinnspeed",
+        "categories": [
+            "hunt",
+            "speed"
         ]
     }
+
 ]

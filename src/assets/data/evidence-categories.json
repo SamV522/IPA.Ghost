@@ -26,5 +26,9 @@
     {
         "key": "traits",
         "name": "Unique Traits"
+    },
+    {
+        "key": "desperate",
+        "name": "Last Resort"
     }
 ]
