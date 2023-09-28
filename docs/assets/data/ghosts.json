@@ -15,7 +15,6 @@
             "emf",
             "spiritbox",
             "ghostwriting",
-            "spirithunt",
             "spiritsmudge"
         ]
     },
@@ -155,9 +154,6 @@
             "lowsanityspeed",
             "fastboi",
             "moroismudge"
-        ],
-        "guaranteed": [
-            "spiritbox"
         ]
     },
     {
@@ -238,7 +234,8 @@
             "ghostorbs",
             "freezing",
             "dots",
-            "yureislam"
+            "yureislam",
+            "yureidoubletap"
         ]
     },
     {
@@ -258,11 +255,9 @@
             "freezing",
             "fingies",
             "hantubreath",
+            "fastboi",
             "slowboi",
             "nolosspeed"
-        ],
-        "guaranteed": [
-            "freezing"
         ]
     },
     {
@@ -302,9 +297,6 @@
             "fingies",
             "obakefingers",
             "shapeshifter"
-        ],
-        "guaranteed": [
-            "fingies"
         ]
     },
     {
@@ -328,9 +320,6 @@
             "heavybreathing",
             "slowboi",
             "fastboi"
-        ],
-        "guaranteed": [
-            "spiritbox"
         ]
     },
     {
@@ -369,7 +358,6 @@
             "freezing",
             "fingies",
             "cantturnoffbreaker",
-            "losspeedboost",
             "jinnspeed"
         ]
     },
@@ -390,7 +378,8 @@
             "freezing",
             "ghostwriting",
             "nohuntsnearpeople",
-            "shadeboring"
+            "shadeboring",
+            "shyshade"
         ]
     },
     {
@@ -433,9 +422,6 @@
             "cantroam",
             "goryodots",
             "noroomchange"
-        ],
-        "guaranteed": [
-            "dots"
         ]
     },
     {
@@ -475,9 +461,6 @@
             "spiritbox",
             "freezing",
             "ghostorbson0evidence"
-        ],
-        "guaranteed": [
-            "ghostorbs"
         ]
     },
     {
