@@ -154,6 +154,9 @@
             "lowsanityspeed",
             "fastboi",
             "moroismudge"
+        ],
+        "guaranteed": [
+            "spiritbox"
         ]
     },
     {
@@ -258,6 +261,9 @@
             "fastboi",
             "slowboi",
             "nolosspeed"
+        ],
+        "guaranteed": [
+            "freezing"
         ]
     },
     {
@@ -297,6 +303,9 @@
             "fingies",
             "obakefingers",
             "shapeshifter"
+        ],
+        "guaranteed": [
+            "fingies"
         ]
     },
     {
@@ -320,6 +329,9 @@
             "heavybreathing",
             "slowboi",
             "fastboi"
+        ],
+        "guaranteed": [
+            "spiritbox"
         ]
     },
     {
@@ -422,6 +434,9 @@
             "cantroam",
             "goryodots",
             "noroomchange"
+        ],
+        "guaranteed": [
+            "dots"
         ]
     },
     {
@@ -461,6 +476,9 @@
             "spiritbox",
             "freezing",
             "ghostorbson0evidence"
+        ],
+        "guaranteed": [
+            "ghostorbs"
         ]
     },
     {
