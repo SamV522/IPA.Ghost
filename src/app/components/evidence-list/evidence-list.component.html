@@ -15,6 +15,9 @@
               [class.common]="isEvidenceInCommon(evidence) && !isEvidenceIncluded(evidence)"
             >
               {{ evidence.name }}
+              <app-tooltip *ngIf="evidence.condition">
+                {{ evidence.condition }}
+              </app-tooltip>
             </div>
           </div>
       </div>

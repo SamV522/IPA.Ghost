@@ -4,11 +4,13 @@ export class Ghost {
     sanity!: {
         min: number,
         normal: number,
-        max: number
+        max: number,
+        condition: string
     }
     speed!: {
         min: number,
         normal: number,
-        max: number
+        max: number,
+        condition: string
     }
 }

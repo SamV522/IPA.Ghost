@@ -24,9 +24,7 @@
 .ghost-detail-row {
   display: flex;
   flex-direction: row;
-  width: 85px;
-  margin: auto;
-  justify-content: space-between;
+  width: 100px;
 }
 
 img {
@@ -35,10 +33,10 @@ img {
 
 div.ghost-detail-row > div {
   display: flex;
+  width: 50px;
   align-items: center;
-  width: 42px;
   border-radius: 4px;
-  padding: 2px;
+  padding: 2px 4px 2px 4px;
 }
 
 div.ghost-sanity-detail {
@@ -68,6 +66,7 @@ div.ipag {
 div.ipag:hover {
   opacity: 80%;
 }
+
 div.ipag:active {
   font-weight: bolder;
   color: rgb(40,40,40)

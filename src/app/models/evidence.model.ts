@@ -3,4 +3,5 @@ export class Evidence {
     id!: string;
     primary: boolean = false;
     categories: string[] = []
+    condition?: string;
 }

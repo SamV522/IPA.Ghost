@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ExpansionPanelComponent } from './components/common/expansion/expansion-panel/expansion-panel.component';
 import { ExpansionPanelHeaderComponent } from './components/common/expansion/expansion-panel-header/expansion-panel-header.component';
 import { AccordionComponent } from './components/common/expansion/accordion/accordion.component';
+import { TooltipComponent } from './components/common/tooltip/tooltip.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { AccordionComponent } from './components/common/expansion/accordion/acco
     EvidenceListComponent,
     ExpansionPanelComponent,
     ExpansionPanelHeaderComponent,
-    AccordionComponent
+    AccordionComponent,
+    TooltipComponent
   ],
   imports: [
     BrowserModule,

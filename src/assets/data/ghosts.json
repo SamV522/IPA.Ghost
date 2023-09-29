@@ -62,7 +62,8 @@
         "sanity": {
             "min": 70,
             "normal": 70,
-            "max": 70
+            "max": 100,
+            "condition": "When using ability to hunt at any sanity"
         },
         "speed": {
             "min": 1.7,
@@ -82,7 +83,8 @@
         "sanity": {
             "min": 50,
             "normal": 50,
-            "max": 80
+            "max": 80,
+            "condition": "When talking nearby"
         },
         "speed": {
             "min": 1.7,
@@ -120,12 +122,14 @@
         "sanity": {
             "min": 50,
             "normal": 50,
-            "max": 65
+            "max": 65,
+            "condition": "With any active electric equipment nearby"
         },
         "speed": {
             "min": 1.7,
             "normal": 1.7,
-            "max": 2.5
+            "max": 2.5,
+            "condition": "With any active electric equipment nearby"
         },
         "evidence": [
             "emf",
@@ -144,7 +148,8 @@
         "speed": {
             "min": 1.7,
             "normal": 2.25,
-            "max": 3.71
+            "max": 3.71,
+            "condition": "Low Sanity and Full LOS Boost"
         },
         "evidence": [
             "spiritbox",
@@ -206,7 +211,8 @@
         "speed": {
             "min": 1.0,
             "normal": 1.0,
-            "max": 3.0
+            "max": 3.0,
+            "condition": "When detecting/moving to last detected location"
         },
         "evidence": [
             "ghostorbs",
@@ -248,7 +254,8 @@
         "speed": {
             "min": 1.44,
             "normal": 1.44,
-            "max": 2.7
+            "max": 2.7,
+            "condition": "When the temperature of the room the Hantu is in is < 0⁰C"
         },
         "evidence": [
             "ghostorbs",
@@ -257,7 +264,8 @@
             "hantubreath",
             "fastboi",
             "slowboi",
-            "nolosspeed"
+            "nolosspeed",
+            "nobreakeron"
         ]
     },
     {
@@ -265,7 +273,8 @@
         "sanity": {
             "min": 60,
             "normal": 60,
-            "max": 60
+            "max": 100,
+            "condition": "When using firelight hunt ability"
         },
         "speed": {
             "min": 1.7,
@@ -296,7 +305,8 @@
             "ghostorbs",
             "fingies",
             "obakefingers",
-            "shapeshifter"
+            "shapeshifter",
+            "sneakyobake"
         ]
     },
     {
@@ -309,7 +319,8 @@
         "speed": {
             "min": 0.4,
             "normal": 0.4,
-            "max": 3.0
+            "max": 3.0,
+            "condition": "When >6 metres pathfinding distance from its target"
         },
         "evidence": [
             "spiritbox",
@@ -351,7 +362,8 @@
         "speed": {
             "min": 1.7,
             "normal": 1.7,
-            "max": 2.5
+            "max": 2.5,
+            "condition": "When the fuse box is turned on, has los with its target, and >3 metres from that target"
         },
         "evidence": [
             "emf",
@@ -434,7 +446,8 @@
         "speed": {
             "min": 1.53,
             "normal": 1.53,
-            "max": 1.87
+            "max": 1.87,
+            "condition": "When the hunt is started from the second twin"
         },
         "evidence": [
             "emf",
@@ -468,7 +481,8 @@
         "sanity": {
             "min": 15,
             "normal": 15,
-            "max": 75
+            "max": 75,
+            "condition": "When age 0 (Initial), then down to normal at age 10"
         },
         "speed": {
             "min": 1.0,
