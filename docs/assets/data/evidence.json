@@ -165,8 +165,10 @@
     {
         "name": "6 Finger Ultraviolet",
         "id": "obakefingers",
+        "condition": "~16.7% chance",
         "categories": [
-            "traits"
+            "traits",
+            "equipment"
         ]
     },
     {
@@ -282,7 +284,8 @@
         "id": "shapeshifter",
         "categories": [
             "hunt"
-        ]
+        ],
+        "condition": "6.66% Chance"
     },
     {
         "name": "D.O.T.S. On Video Only",
@@ -358,7 +361,8 @@
         "categories": [
             "hunt",
             "speed"
-        ]
+        ],
+        "condition": "While at least 1 player nearby"
     },
     {
         "name": "Doesn't Speed Up w/LOS",
@@ -384,12 +388,29 @@
         ]
     },
     {
-        "name": "LOS Speed Boost w/Breaker On and >3m Away",
+        "name": "LOS Speed Boost",
         "id": "jinnspeed",
         "categories": [
             "hunt",
             "speed"
+        ],
+        "condition": "Breaker On and >3m Away"
+    },
+    {
+        "name": "Can't Turn Breaker On",
+        "id": "nobreakeron",
+        "categories": [
+            "traits",
+            "desperate"
         ]
+    },
+    {
+        "name": "Hid Ultraviolet",
+        "id": "sneakyobake",
+        "categories": [
+            "equipment",
+            "traits"
+        ],
+        "condition": "25% Chance"
     }
-
 ]
