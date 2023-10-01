@@ -1,0 +1,15 @@
+.danger-speed {
+    background: linear-gradient(to left, rgba(220,0,0,0),rgba(220,0,0,0), rgba(220,0,0,0.2), rgba(220,0,0,0.4));
+}
+  
+.safe-speed {
+    background: linear-gradient(to left, rgba(0,220,0,0),rgba(0,220,0,0), rgba(0,220,0,0.2), rgba(0,220,0,0.4));
+}
+
+.ghost-speed-detail{
+    display: flex;
+    width: 50px;
+    align-items: center;
+    border-radius: 4px;
+    padding: 2px 4px 2px 4px;
+}

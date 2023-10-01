@@ -1,0 +1,9 @@
+<div class="ghost-speed-detail"
+[class.safe-speed]="ghost.speed.normal < 1.7"
+[class.danger-speed]="ghost.speed.normal > 1.7">
+<img src="assets/img/footsteps.png" width="10" height="10" />
+{{ ghost.speed.normal | number: '1.1' }}
+<app-tooltip *ngIf="ghost.speed.max > ghost.speed.normal">
+  {{ ghost.speed.max | number: '1.1'}} - {{ghost.speed.condition}}
+</app-tooltip>
+</div>

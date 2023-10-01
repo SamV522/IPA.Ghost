@@ -97,11 +97,3 @@ div.ipag:active {
 .safe-sanity {
   background: linear-gradient(to right, rgba(0,220,0,0),rgba(0,220,0,0), rgba(0,220,0,0.2), rgba(0,220,0,0.4));
 }
-
-.danger-speed {
-  background: linear-gradient(to left, rgba(220,0,0,0),rgba(220,0,0,0), rgba(220,0,0,0.2), rgba(220,0,0,0.4));
-}
-
-.safe-speed {
-  background: linear-gradient(to left, rgba(0,220,0,0),rgba(0,220,0,0), rgba(0,220,0,0.2), rgba(0,220,0,0.4));
-}

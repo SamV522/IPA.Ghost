@@ -11,6 +11,7 @@ import { ExpansionPanelComponent } from './components/common/expansion/expansion
 import { ExpansionPanelHeaderComponent } from './components/common/expansion/expansion-panel-header/expansion-panel-header.component';
 import { AccordionComponent } from './components/common/expansion/accordion/accordion.component';
 import { TooltipComponent } from './components/common/tooltip/tooltip.component';
+import { GhostFootstepComponent } from './components/ghost-footstep/ghost-footstep.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { TooltipComponent } from './components/common/tooltip/tooltip.component'
     ExpansionPanelComponent,
     ExpansionPanelHeaderComponent,
     AccordionComponent,
-    TooltipComponent
+    TooltipComponent,
+    GhostFootstepComponent
   ],
   imports: [
     BrowserModule,

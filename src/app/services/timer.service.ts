@@ -12,14 +12,27 @@ export class TimerService {
 
   constructor() { }
 
-  startTimer(seconds: number, id: number, interval: number = 100) {
+  startTimer(seconds: number, id: number, loopCount: number = 1, interval: number = 100, loopCallback?: () => void) {
     this.remainingSeconds[id] = seconds;
-    this.timers[id] = setInterval(() => {
-      if(this.remainingSeconds[id] > 0)
+
+    const timer = setInterval(() => {
+      if (this.remainingSeconds[id] > 0) {
         this.remainingSeconds[id]--;
-      else
-        this.stopTimer(id);
-    }, interval)
+      } else {
+        if (loopCount === 1) {
+          this.stopTimer(id);
+        } else {
+          // If looping is enabled, decrement loopCount and reset the timer
+          loopCount--;
+          this.remainingSeconds[id] = seconds;
+          if (loopCallback) {
+            loopCallback();
+          }
+        }
+      }
+    }, interval);
+
+    this.timers[id] = timer;
   }
 
   stopTimer(id: number) {
