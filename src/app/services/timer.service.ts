@@ -14,7 +14,7 @@ export class TimerService {
   constructor() { }
 
   getRemainingTime(id: string): number {
-    return this.remainingSeconds[id] ?? -1;
+    return this.remainingSeconds[id] ?? 0;
   }
 
   isRunning(id: string) {
@@ -24,7 +24,7 @@ export class TimerService {
   startFootstepTimer(speed: number, loopCount: number = 1, callbacks?: TimerEventCallbacks) {
     if(this.timers['footsteps'])
       this.stopTimer('footsteps');
-    
+
     if(callbacks)
       this.callbacks['footsteps'] = callbacks;
 
@@ -46,7 +46,7 @@ export class TimerService {
     this.timers['footsteps'] = timer;
   }
 
-  startTimer(seconds: number, id: string, interval: number = 100, loopCount: number = 1, callbacks?: TimerEventCallbacks) {
+  startTimer(seconds: number, id: string, loopCount: number = 1, callbacks?: TimerEventCallbacks, interval: number = 100) {
     this.remainingSeconds[id] = seconds;
 
     const timer = setInterval(() => {

@@ -1,0 +1,14 @@
+<div 
+    (click)="restartTimer()"
+    class="clock">
+    <div class="face">
+        <div class="fill" [style.background]="getConicGradientBackground()">
+            {{ Time - timerService.getRemainingTime(Name) | number: '1.1' }}
+        </div>
+        <div class="needle">
+        </div>
+    </div>
+</div>
+<div class="timer-title">
+    {{Name}}
+</div>
