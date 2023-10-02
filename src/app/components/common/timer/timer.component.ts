@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, HostListener, Input } from '@angular/core';
 import { TimerService } from 'src/app/services/timer.service';
 
 @Component({
@@ -9,10 +9,21 @@ import { TimerService } from 'src/app/services/timer.service';
 export class TimerComponent {
   @Input() Time!: number;
   @Input() Name!: string;
+  @Input() restartKey!: string;
 
   constructor(public timerService: TimerService)
   {
 
+  }
+
+  @HostListener('document:keydown', ['$event'])
+  handleSKeyPressed(event: KeyboardEvent)
+  {
+    if (event.key == this.restartKey)
+    {
+      this.timerService.stopTimer(this.Name)
+      this.timerService.startTimer(this.Time, this.Name, 0);
+    }
   }
 
   restartTimer() {
