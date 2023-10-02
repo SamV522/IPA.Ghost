@@ -11,6 +11,7 @@ export class AudioService {
   playSound(sound: string) {
     this.audio.src = sound;
     this.audio.load();
+    this.audio.volume = 0.3;
     this.audio.play();
   }
 }

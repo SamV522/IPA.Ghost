@@ -6,36 +6,35 @@ import { Injectable } from '@angular/core';
 export class TimerService {
 
 
-  private remainingSeconds: number[] = [];
-  private timers: NodeJS.Timeout[] = [];
+  private remainingSeconds: Record<string, number> = {};
+  private timers: Record<string, NodeJS.Timeout> = {};
   
 
   constructor() { }
 
-  startTimer(seconds: number, id: number, loopCount: number = 1, interval: number = 100, loopCallback?: () => void) {
-    this.remainingSeconds[id] = seconds;
+  startTimer(speed: number, id: string, loopCount: number = 1, loopCallback?: () => void, finishCallback?: () => void) {
+    if(this.timers[id])
+      this.stopTimer(id);
 
     const timer = setInterval(() => {
-      if (this.remainingSeconds[id] > 0) {
-        this.remainingSeconds[id]--;
+      if (loopCount === 0) {
+        this.stopTimer(id);
+        if (finishCallback) {
+          finishCallback();
+        }
       } else {
-        if (loopCount === 1) {
-          this.stopTimer(id);
-        } else {
-          // If looping is enabled, decrement loopCount and reset the timer
-          loopCount--;
-          this.remainingSeconds[id] = seconds;
-          if (loopCallback) {
-            loopCallback();
-          }
+        // If looping is enabled, decrement loopCount and reset the timer
+        loopCount--;
+        if (loopCallback) {
+          loopCallback();
         }
       }
-    }, interval);
+    }, (1 / speed) * 1000);
 
     this.timers[id] = timer;
   }
 
-  stopTimer(id: number) {
+  stopTimer(id: string) {
     clearInterval(this.timers[id]);
   }
 }
