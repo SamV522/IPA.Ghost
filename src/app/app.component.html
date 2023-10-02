@@ -1,39 +1,46 @@
 <html>
   <body>
-    <div class="flex-column-container">
-      <div class="book-wrapper">
-        <div class="book-tabs">
-          <div class="book-tab">
-            <!-- Left Tabs -->
-            Left
-            <div class="page flex-column-container">
-              <div class="left-page">
-                <div class="page-header">Primary Evidence</div>
-                <!-- primary evidence -->
-                <app-evidence-list class="primary-evidence" [evidence]="this.evidenceService.getPrimaryEvidence()"></app-evidence-list>
-                <!-- ghosts -->
-                <app-ghost-list></app-ghost-list>
-                <i class="hidden-subtitle">In Primo Aspectu</i>
-                <!--  In Primo Aspectu -->
+    <div class="flex-row-container">
+      <div class="flex-column-container">
+      </div>
+      <div class="flex-column-container">
+        <div class="book-wrapper">
+          <div class="book-tabs">
+            <div class="book-tab">
+              <!-- Left Tabs -->
+              Left
+              <div class="page flex-column-container">
+                <div class="left-page">
+                  <div class="page-header">Primary Evidence</div>
+                  <!-- primary evidence -->
+                  <app-evidence-list class="primary-evidence" [evidence]="this.evidenceService.getPrimaryEvidence()"></app-evidence-list>
+                  <!-- ghosts -->
+                  <app-ghost-list></app-ghost-list>
+                  <i class="hidden-subtitle">In Primo Aspectu</i>
+                  <!--  In Primo Aspectu -->
+                </div>
+              </div>
+            </div>
+            <div class="book-tab">
+              <!-- Right Tabs -->
+              Right
+              <div class="page flex-column-container">
+                <div class="right-page">
+                  <div class="page-header">Secondary Evidence</div>
+                  <!-- evidence -->
+                  <app-evidence-list class="secondary-evidence" [evidence]="this.evidenceService.getSecondaryEvidence()" [categorize]="true" [alphabeticalSort]="true"></app-evidence-list>
+                </div>
               </div>
             </div>
           </div>
-          <div class="book-tab">
-            <!-- Right Tabs -->
-            Right
-            <div class="page flex-column-container">
-              <div class="right-page">
-                <div class="page-header">Secondary Evidence</div>
-                <!-- evidence -->
-                <app-evidence-list class="secondary-evidence" [evidence]="this.evidenceService.getSecondaryEvidence()" [categorize]="true" [alphabeticalSort]="true"></app-evidence-list>
-              </div>
+          <div class="book-container">
+            <div class="flex-row-container">
             </div>
           </div>
         </div>
-        <div class="book-container">
-          <div class="flex-row-container">
-          </div>
-        </div>
+      </div>
+      <div class="flex-column-container">
+        <app-timers></app-timers>
       </div>
     </div>
   </body>

@@ -24,6 +24,7 @@
 .ghost-detail-row {
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
   width: 100px;
 }
 
@@ -44,7 +45,11 @@ div.ghost-sanity-detail {
   justify-content: space-between;
 }
 
-.ghost-item:hover {
+.ghost-title { 
+  width: 100%;
+}
+
+.ghost-item:has(div.ghost-title:hover) {  
   background-color: rgba(127, 161, 255, 0.5);
   cursor: pointer;
 }
@@ -96,12 +101,4 @@ div.ipag:active {
 
 .safe-sanity {
   background: linear-gradient(to right, rgba(0,220,0,0),rgba(0,220,0,0), rgba(0,220,0,0.2), rgba(0,220,0,0.4));
-}
-
-.danger-speed {
-  background: linear-gradient(to left, rgba(220,0,0,0),rgba(220,0,0,0), rgba(220,0,0,0.2), rgba(220,0,0,0.4));
-}
-
-.safe-speed {
-  background: linear-gradient(to left, rgba(0,220,0,0),rgba(0,220,0,0), rgba(0,220,0,0.2), rgba(0,220,0,0.4));
 }
