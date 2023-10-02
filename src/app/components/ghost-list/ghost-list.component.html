@@ -3,9 +3,9 @@
   <div class="ghost-column" *ngFor="let column of columns">
     <div class="ghost-item" *ngFor="let ghost of column"
       [class.selected]="isGhostSelected(ghost)"
-      [class.excluded]="isGhostDisproved(ghost)"
-      (click)="ghostClicked(ghost)">
-        <div
+      [class.excluded]="isGhostDisproved(ghost)">
+        <div class="ghost-title"
+        (click)="ghostClicked(ghost)"
         [class.selected-text]="isGhostSelected(ghost)"
         [class.crossedoff]="isGhostExcluded(ghost)">
           {{ ghost.name }}
@@ -15,7 +15,7 @@
           <div class="ghost-sanity-detail"
             [class.safe-sanity]="ghost.sanity.max < 50"
             [class.danger-sanity]="ghost.sanity.max > 50">
-            <img src="assets/img/sanity.png" width="10px" height="10px" />
+            <img src="assets/img/sanity.png" width="14px" height="14px" />
             {{ ghost.sanity.normal }}%
             <app-tooltip *ngIf="ghost.sanity.max > ghost.sanity.normal">
               {{ ghost.sanity.max }}% - {{ghost.sanity.condition}}

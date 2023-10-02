@@ -44,7 +44,7 @@ div.ghost-sanity-detail {
   justify-content: space-between;
 }
 
-.ghost-item:hover {
+.ghost-item:has(div.ghost-title:hover) {  
   background-color: rgba(127, 161, 255, 0.5);
   cursor: pointer;
 }

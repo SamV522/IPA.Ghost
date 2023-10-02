@@ -20,6 +20,7 @@ export class GhostFootstepComponent {
 
   startFootsteps(speed: number) {
     if (this.playing) {
+      this.playing = false;
       this.timerService.stopTimer('footsteps');
     } else {
       this.playing = true;
