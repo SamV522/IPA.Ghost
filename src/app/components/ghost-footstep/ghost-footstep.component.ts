@@ -25,11 +25,17 @@ export class GhostFootstepComponent {
     } else {
       this.playing = true;
       this.playFootstep();
-      this.timerService.startTimer(speed, 'footsteps', 9, () => {
-        this.playFootstep();
-      }, () => {
-        this.playing = false;
-      } )
+      this.timerService.startFootstepTimer(speed, 9, {
+        OnLoop: () => {
+          this.playFootstep();
+          }, 
+        OnFinish: () => {
+          this.playing = false;
+        },
+        OnStopped: () => {
+          this.playing = false;
+        }
+      });
     }
   }
 

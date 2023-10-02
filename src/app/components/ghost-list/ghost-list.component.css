@@ -24,6 +24,7 @@
 .ghost-detail-row {
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
   width: 100px;
 }
 
@@ -42,6 +43,10 @@ div.ghost-detail-row > div {
 div.ghost-sanity-detail {
   display: flex;
   justify-content: space-between;
+}
+
+.ghost-title { 
+  width: 100%;
 }
 
 .ghost-item:has(div.ghost-title:hover) {  

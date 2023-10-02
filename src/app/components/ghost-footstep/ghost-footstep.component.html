@@ -1,7 +1,15 @@
 <div class="ghost-speed-detail"
+(click)="startFootsteps(ghost.speed.normal)"
 [class.safe-speed]="ghost.speed.normal < 1.7"
 [class.danger-speed]="ghost.speed.normal > 1.7">
-<img class="footsteps" src="assets/img/footsteps.png" width="14px" height="14px" (click)="startFootsteps(ghost.speed.normal)"/>
+<ng-container *ngIf="!playing; else elseBlock">
+  <img class="footsteps" src="assets/img/footsteps.png" width="14px" height="14px"/>
+</ng-container>
+<ng-template #elseBlock>
+  <span class="material-symbols-outlined" style="font-size: 14px; width: 14px; height: 14px">
+    volume_up
+    </span>
+</ng-template>
   {{ ghost.speed.normal | number: '1.1' }}
 <app-tooltip *ngIf="ghost.speed.max > ghost.speed.normal">
   {{ ghost.speed.max | number: '1.1'}} - {{ghost.speed.condition}}
