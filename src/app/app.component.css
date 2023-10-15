@@ -84,6 +84,12 @@ div.flex-column-container {
     margin: auto;
 }
 
-.secondary-evidence {    
-    font-size: 14px;
+.footer-text {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    font-size: 12px;
+    color: #fff;
+    height: 30px;
+    margin: auto;
 }

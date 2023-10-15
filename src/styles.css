@@ -28,5 +28,12 @@ body {
   ::-webkit-scrollbar-thumb {
     background: black;
     border-radius: 10px;
+  }  
+
+  a {
+    color: #fff
   }
-  
+
+  a:hover {
+    color: #aaa;
+  }
