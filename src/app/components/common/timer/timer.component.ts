@@ -36,7 +36,6 @@ export class TimerComponent {
   getConicGradientBackground(): string {
     const remaining = this.timerService.getRemainingTime(this.Name);
     const percentage = ((this.Time - remaining) / this.Time) * 100
-    console.log(percentage);
 
     return `conic-gradient(
       from 0deg,

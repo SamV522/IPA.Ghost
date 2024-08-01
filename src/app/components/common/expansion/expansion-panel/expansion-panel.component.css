@@ -7,8 +7,8 @@ div.expansion-panel {
 hr.line {
   flex-grow: 1;
   height: 2px;
-  background-color: black; /* Choose your desired line color */
-  margin: 0 10px; /* Adjust the margin as needed */
+  background-color: black;
+  margin: 0 10px;
   border-radius: 4px;
   border-style:none;
   border-color:black;
@@ -31,5 +31,5 @@ div.panel-header:hover {
 }
 
 div.panel-content {
-    margin: 0px 8px 0px 8px;
+    margin: 4px 8px 4px 8px;
 }
